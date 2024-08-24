@@ -36,6 +36,9 @@
 - Buck/boost converter (?)
   - Need to determine brightness of LED as battery dies using only LED driver
 - Button
+  - Part number: PTS645VK58-2 LFS
+  - Manufacturer: C&K
+  - Right angle
 - Debug header
   - Part number: FTSH-105-01-L-DV-K-P
   - Manufacturer: Samtec Inc.
