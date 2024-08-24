@@ -239,7 +239,7 @@
 			)
 		)
 	)
-	(model "${KIPRJMOD}/lib/bc805_asm.stp"
+	(model "${KIPRJMOD}/libs/3Dmodels/bc805_asm.stp"
 		(offset
 			(xyz 5 -0.5 0)
 		)

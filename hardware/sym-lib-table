@@ -1,5 +1,4 @@
 (sym_lib_table
   (version 7)
-  (lib (name "Fanstel")(type "KiCad")(uri "${KIPRJMOD}/lib/Fanstel.kicad_sym")(options "")(descr ""))
-  (lib (name "Cree-LED")(type "KiCad")(uri "${KIPRJMOD}/lib/Cree-LED.kicad_sym")(options "")(descr ""))
+  (lib (name "Fanstel")(type "KiCad")(uri "${KIPRJMOD}/libs/Fanstel.kicad_sym")(options "")(descr ""))
 )
