@@ -38,6 +38,11 @@
   - Right angle
 - Battery connector
 - Battery charger
+- Battery protection IC
+  - Part number: BQ29732
+  - Manufacturer: Texas Instruments
+  - OVP voltage: 4.280 V
+  - UVP voltage: 2.500 V
 - Buck/boost converter (?)
   - Need to determine brightness of LED as battery dies using only LED driver
 - Button
