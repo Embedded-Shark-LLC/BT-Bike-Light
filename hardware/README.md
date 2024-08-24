@@ -35,6 +35,11 @@
   - Right angle
 - Battery connector
 - Battery charger
+  - Part number: MCP73834-FCI/MF
+  - Manufacturer: Microchip Technology
+  - Charge voltage: 4.20 V
+  - Charge current: 1 A
+  - Timer period: 6 hours
 - Battery protection IC
   - Part number: BQ29732
   - Manufacturer: Texas Instruments
