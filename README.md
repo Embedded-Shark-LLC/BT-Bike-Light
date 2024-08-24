@@ -2,4 +2,4 @@
 Bluetooth-enabled bike light
 
 ## Hardware architecture
-![HW architecture diagram](/docs/BT-Bike-Light_HW-Architecture.svg)
+![HW architecture diagram](/docs/DWG_HW-Architecture.svg)

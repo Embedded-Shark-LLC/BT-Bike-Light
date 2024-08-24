@@ -1,7 +1,7 @@
 # Hardware
 
 ## Architecture diagram
-![HW architecture diagram](/docs/BT-Bike-Light_HW-Architecture.svg)
+![HW architecture diagram](/docs/DWG_HW-Architecture.svg)
 
 ## List of components
 - Bluetooth module
@@ -24,6 +24,9 @@
   - Manufacturer: STMicroelectronics
   - Operating voltage: 1.62-3.6 V
 - USB-C port
+- USB/UART bridge
+  - Part number: FT230XS
+  - Manufacturer: FTDI
 - Buzzer
 - Battery connector
 - Battery charger
@@ -34,3 +37,6 @@
   - Part number: FTSH-105-01-L-DV-K-P
   - Manufacturer: Samtec Inc.
   - 10-pin SWD
+- USB data pin protection IC
+  - Part number: USBLC6-2SC6
+  - Manufacturer: STMicroelectronics
