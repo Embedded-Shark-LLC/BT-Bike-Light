@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "Fanstel")(type "KiCad")(uri "${KIPRJMOD}/libs/Fanstel.kicad_sym")(options "")(descr ""))
   (lib (name "STMicroelectronics")(type "KiCad")(uri "${KIPRJMOD}/libs/STMicroelectronics.kicad_sym")(options "")(descr ""))
+  (lib (name "Diodes-Incorporated")(type "KiCad")(uri "${KIPRJMOD}/libs/Diodes-Incorporated.kicad_sym")(options "")(descr ""))
 )
