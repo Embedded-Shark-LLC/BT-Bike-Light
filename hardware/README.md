@@ -31,6 +31,11 @@
   - Part number: FT230XS
   - Manufacturer: FTDI
 - Buzzer
+  - Part number: AT-1220-TT-3V-2-R
+  - Manufacturer: PUI Audio, Inc.
+  - Operating voltage: 2-5 V
+  - Frequency: 2 kHz
+  - Right angle
 - Battery connector
 - Battery charger
 - Buck/boost converter (?)

@@ -3,4 +3,5 @@
   (lib (name "Fanstel")(type "KiCad")(uri "${KIPRJMOD}/libs/Fanstel.pretty")(options "")(descr ""))
   (lib (name "Samtech")(type "KiCad")(uri "${KIPRJMOD}/libs/Samtech.pretty")(options "")(descr ""))
   (lib (name "GCT")(type "KiCad")(uri "${KIPRJMOD}/libs/GCT.pretty")(options "")(descr ""))
+  (lib (name "PUI-Audio")(type "KiCad")(uri "${KIPRJMOD}/libs/PUI-Audio.pretty")(options "")(descr ""))
 )
