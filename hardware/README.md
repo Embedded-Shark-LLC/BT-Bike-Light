@@ -10,9 +10,10 @@
   - Operating voltage: 1.7-3.6 V
   - 10 GPIO pins
 - USB-C port
-  - Part number: USB4145-03-0170-C
-  - Manufacturer: GCT
-  - Vertical mount
+  - Part number: UJC-HP2-3-SMT-TR
+  - Manufacturer: CUI Devices
+  - Power only
+  - Right angle
 - Battery charger
   - Part number: MCP73834-FCI/MF
   - Manufacturer: Microchip Technology
