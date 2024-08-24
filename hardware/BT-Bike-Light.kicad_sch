@@ -2194,7 +2194,7 @@
 				)
 			)
 		)
-		(symbol "Device:Q_NMOS_GDS"
+		(symbol "Device:Q_NMOS_GSD"
 			(pin_names
 				(offset 0) hide)
 			(exclude_from_sim no)
@@ -2209,7 +2209,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "Q_NMOS_GDS"
+			(property "Value" "Q_NMOS_GSD"
 				(at 5.08 -1.27 0)
 				(effects
 					(font
@@ -2236,7 +2236,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "N-MOSFET transistor, gate/drain/source"
+			(property "Description" "N-MOSFET transistor, gate/source/drain"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2254,7 +2254,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Q_NMOS_GDS_0_1"
+			(symbol "Q_NMOS_GSD_0_1"
 				(polyline
 					(pts
 						(xy 0.254 0) (xy -2.54 0)
@@ -2421,7 +2421,7 @@
 					)
 				)
 			)
-			(symbol "Q_NMOS_GDS_1_1"
+			(symbol "Q_NMOS_GSD_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -2441,9 +2441,9 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 5.08 270)
+					(at 2.54 -5.08 90)
 					(length 2.54)
-					(name "D"
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2459,9 +2459,9 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 -5.08 90)
+					(at 2.54 5.08 270)
 					(length 2.54)
-					(name "S"
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4838,7 +4838,7 @@
 		(uuid "6a736edb-2048-45c8-854b-6f7a2db96b27")
 	)
 	(junction
-		(at 138.43 170.18)
+		(at 129.54 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8753bc48-aab7-4610-8df2-25c30b6627f9")
@@ -5241,6 +5241,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 175.26) (xy 129.54 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d2f9986-4b1c-499e-aa52-03895311d9a1")
+	)
+	(wire
+		(pts
 			(xy 144.78 43.18) (xy 144.78 54.61)
 		)
 		(stroke
@@ -5361,7 +5371,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 165.1) (xy 142.24 165.1)
+			(xy 129.54 168.91) (xy 133.35 168.91)
 		)
 		(stroke
 			(width 0)
@@ -5871,13 +5881,23 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 170.18) (xy 142.24 170.18)
+			(xy 129.54 173.99) (xy 133.35 173.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c8d0f447-ca15-44a2-b649-bc0443100760")
+	)
+	(wire
+		(pts
+			(xy 113.03 180.34) (xy 115.57 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8e5e151-34d1-471c-bcea-f07a29bcccc2")
 	)
 	(wire
 		(pts
@@ -5911,6 +5931,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 185.42) (xy 129.54 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf72a8f5-d859-4876-a577-18746f0f6af9")
+	)
+	(wire
+		(pts
 			(xy 123.19 36.83) (xy 134.62 36.83)
 		)
 		(stroke
@@ -5938,6 +5968,16 @@
 			(type default)
 		)
 		(uuid "d671d498-f5a9-4b54-ae5f-065b3e952312")
+	)
+	(wire
+		(pts
+			(xy 120.65 180.34) (xy 121.92 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d81856da-c5fa-44a1-8d51-9e1abe2915fd")
 	)
 	(wire
 		(pts
@@ -6126,6 +6166,18 @@
 		(uuid 4fab73e2-9e15-40c0-bccc-7c30d4aa694a)
 	)
 	(rectangle
+		(start 104.14 165.735)
+		(end 148.59 191.135)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 90ba1e2c-5e52-4a36-8201-fe59a7d6704d)
+	)
+	(rectangle
 		(start 162.56 29.21)
 		(end 208.28 53.34)
 		(stroke
@@ -6181,6 +6233,17 @@
 			(justify left bottom)
 		)
 		(uuid "81f50ce0-3984-4266-9298-3e10bbcf0d51")
+	)
+	(text "BUZZER"
+		(exclude_from_sim no)
+		(at 104.14 165.862 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "adfb902f-d616-4361-b9fd-e91dc92d22c0")
 	)
 	(text "INTERFACE BUTTON"
 		(exclude_from_sim no)
@@ -6292,6 +6355,17 @@
 		)
 		(uuid "477ddbb9-143f-49c9-ae28-efd22d3a3918")
 	)
+	(label "BUZZER"
+		(at 113.03 180.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "622a5b5c-a96e-4232-b351-aec949b6977d")
+	)
 	(label "nRST"
 		(at 124.46 100.33 180)
 		(fields_autoplaced yes)
@@ -6302,6 +6376,17 @@
 			(justify right bottom)
 		)
 		(uuid "6aff3565-189c-4df0-9cae-49c1c643bfab")
+	)
+	(label "BUZZER"
+		(at 134.62 127 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "76b38d0d-247e-40c8-a0bd-87e0d3c64476")
 	)
 	(label "CHRG_STAT1"
 		(at 189.23 74.93 180)
@@ -7465,7 +7550,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 128.27 175.26 90)
+		(at 118.11 180.34 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7474,7 +7559,7 @@
 		(fields_autoplaced yes)
 		(uuid "24d4e5d1-2792-4ff8-8d24-4a7dd089a2eb")
 		(property "Reference" "R2"
-			(at 128.27 168.91 90)
+			(at 118.11 173.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7482,7 +7567,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 128.27 171.45 90)
+			(at 118.11 176.53 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7490,7 +7575,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 175.26 0)
+			(at 118.11 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7499,7 +7584,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 128.27 175.26 0)
+			(at 118.11 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7508,7 +7593,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 128.27 175.26 0)
+			(at 118.11 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8081,8 +8166,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS_GDS")
-		(at 135.89 175.26 0)
+		(lib_id "Device:Q_NMOS_GSD")
+		(at 127 180.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8091,7 +8176,7 @@
 		(fields_autoplaced yes)
 		(uuid "408307e9-85da-45ab-bc90-e87286dfe7b6")
 		(property "Reference" "Q1"
-			(at 142.24 173.9899 0)
+			(at 133.35 179.0699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8099,8 +8184,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Q_NMOS_GDS"
-			(at 142.24 176.5299 0)
+		(property "Value" "DMN3731U-7"
+			(at 133.35 181.6099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8108,8 +8193,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 140.97 172.72 0)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 132.08 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8117,8 +8202,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 135.89 175.26 0)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMN3731U.pdf"
+			(at 127 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8126,8 +8211,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "N-MOSFET transistor, gate/drain/source"
-			(at 135.89 175.26 0)
+		(property "Description" "N-MOSFET transistor, gate/source/drain"
+			(at 127 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10555,7 +10640,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 138.43 180.34 0)
+		(at 129.54 186.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10564,7 +10649,7 @@
 		(fields_autoplaced yes)
 		(uuid "d03435cf-3a9f-4bfc-822d-5c6c430eef9f")
 		(property "Reference" "#PWR015"
-			(at 138.43 186.69 0)
+			(at 129.54 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10573,7 +10658,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 138.43 185.42 0)
+			(at 129.54 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10582,7 +10667,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 180.34 0)
+			(at 129.54 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10591,7 +10676,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 180.34 0)
+			(at 129.54 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10600,7 +10685,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 138.43 180.34 0)
+			(at 129.54 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11430,7 +11515,7 @@
 	)
 	(symbol
 		(lib_id "Device:Buzzer")
-		(at 144.78 167.64 0)
+		(at 135.89 171.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11439,7 +11524,7 @@
 		(fields_autoplaced yes)
 		(uuid "fab881c9-bed3-42fe-8097-9445d93cadd2")
 		(property "Reference" "BZ1"
-			(at 148.59 166.3699 0)
+			(at 139.7 170.1799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11448,7 +11533,7 @@
 			)
 		)
 		(property "Value" "Buzzer"
-			(at 148.59 168.9099 0)
+			(at 139.7 172.7199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11457,7 +11542,7 @@
 			)
 		)
 		(property "Footprint" "PUI-Audio:PUI_AT-1220-TT-3V-2-R"
-			(at 144.145 165.1 90)
+			(at 135.255 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11466,7 +11551,7 @@
 			)
 		)
 		(property "Datasheet" "https://api.puiaudio.com/file/cb716568-5258-4e08-b27f-2aa736c8b20d.pdf"
-			(at 144.145 165.1 90)
+			(at 135.255 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11475,7 +11560,7 @@
 			)
 		)
 		(property "Description" "Buzzer, polarized"
-			(at 144.78 167.64 0)
+			(at 135.89 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11500,7 +11585,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 138.43 167.64 0)
+		(at 129.54 171.45 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11509,7 +11594,7 @@
 		(dnp no)
 		(uuid "fffacdd1-8f6a-441d-9c1d-e74c3ef262e4")
 		(property "Reference" "R1"
-			(at 135.89 166.3699 0)
+			(at 127 170.1799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11518,7 +11603,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 135.89 168.9099 0)
+			(at 127 172.7199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11527,7 +11612,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 167.64 0)
+			(at 129.54 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11536,7 +11621,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 138.43 167.64 0)
+			(at 129.54 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11545,7 +11630,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 138.43 167.64 0)
+			(at 129.54 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
