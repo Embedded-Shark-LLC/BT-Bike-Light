@@ -23,3 +23,4 @@
 | Description           | Part Number           | Manufacturer          | Comments                          |
 | --------------------- | --------------------- | --------------------- | --------------------------------- |
 | 10K NTC thermistor    | ERT-J0EM103J          | Panasonic             | B25/50 = 3900K                    |
+| Dual NMOS FET         | DMG4800LSD            | Diodes Incorporated   | 22 mOhm @ Vgs = 4.5 V             |
