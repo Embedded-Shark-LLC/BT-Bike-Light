@@ -20,6 +20,9 @@
   - Charge current: 1 A
   - Timer period: 6 hours
 - Battery connector
+  - Part number: S2B-PH-K-S
+  - Manufacturer: JST
+  - Right angle
 - LDO
   - Part number: TPS7A0218
   - Manufacturer: Texas Instruments
