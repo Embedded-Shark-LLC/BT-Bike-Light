@@ -27,9 +27,6 @@
   - Part number: USB4145-03-0170-C
   - Manufacturer: GCT
   - Vertical mount
-- USB/UART bridge
-  - Part number: FT230XS
-  - Manufacturer: FTDI
 - Buzzer
   - Part number: AT-1220-TT-3V-2-R
   - Manufacturer: PUI Audio, Inc.
