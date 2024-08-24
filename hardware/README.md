@@ -24,6 +24,9 @@
   - Manufacturer: STMicroelectronics
   - Operating voltage: 1.62-3.6 V
 - USB-C port
+  - Part number: USB4145-03-0170-C
+  - Manufacturer: GCT
+  - Vertical mount
 - USB/UART bridge
   - Part number: FT230XS
   - Manufacturer: FTDI
