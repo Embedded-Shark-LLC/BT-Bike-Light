@@ -4983,6 +4983,16 @@
 	)
 	(wire
 		(pts
+			(xy 58.42 179.07) (xy 58.42 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e583eb4-2a0c-4715-89ab-f37911e3b2f3")
+	)
+	(wire
+		(pts
 			(xy 229.87 162.56) (xy 229.87 156.21)
 		)
 		(stroke
@@ -5080,6 +5090,16 @@
 			(type default)
 		)
 		(uuid "301eb7ae-83af-49e6-92e5-285747595f43")
+	)
+	(wire
+		(pts
+			(xy 30.48 187.96) (xy 30.48 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30d086c2-7ace-48a4-814b-91682a00fe61")
 	)
 	(wire
 		(pts
@@ -5220,6 +5240,16 @@
 			(type default)
 		)
 		(uuid "576044cf-2c0a-4faa-bc79-79e8b16c5e31")
+	)
+	(wire
+		(pts
+			(xy 53.34 175.26) (xy 62.23 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "593cba0e-14f7-4482-ab1f-0f35f083a4e4")
 	)
 	(wire
 		(pts
@@ -5413,6 +5443,16 @@
 	)
 	(wire
 		(pts
+			(xy 58.42 177.8) (xy 53.34 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "845a40a9-9e3b-414c-a7cc-e5345f1dec4c")
+	)
+	(wire
+		(pts
 			(xy 124.46 95.25) (xy 127 95.25)
 		)
 		(stroke
@@ -5433,6 +5473,16 @@
 	)
 	(wire
 		(pts
+			(xy 62.23 175.26) (xy 62.23 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f630161-ef19-4e91-a913-413b25b25497")
+	)
+	(wire
+		(pts
 			(xy 247.65 68.58) (xy 247.65 69.85)
 		)
 		(stroke
@@ -5450,6 +5500,16 @@
 			(type default)
 		)
 		(uuid "9ce5ddd8-1a4d-4d9c-9fb3-c3b2ef7d8ffc")
+	)
+	(wire
+		(pts
+			(xy 38.1 187.96) (xy 38.1 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f29f809-4bf8-4c03-8bc1-d14982f7e424")
 	)
 	(wire
 		(pts
@@ -5643,6 +5703,26 @@
 	)
 	(wire
 		(pts
+			(xy 62.23 184.15) (xy 62.23 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d33ed4fd-f21c-46f6-aed2-e6b316bf0cad")
+	)
+	(wire
+		(pts
+			(xy 58.42 184.15) (xy 58.42 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ded45d5d-8508-4f9f-9564-f2df06ff8973")
+	)
+	(wire
+		(pts
 			(xy 72.39 30.48) (xy 72.39 31.75)
 		)
 		(stroke
@@ -5713,7 +5793,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 157.48) (xy 105.41 157.48)
+			(xy 53.34 162.56) (xy 55.88 162.56)
 		)
 		(stroke
 			(width 0)
@@ -5784,7 +5864,7 @@
 		(uuid 3075213b-599a-4bd4-80b5-297de14d4799)
 	)
 	(rectangle
-		(start 164.465 59.055)
+		(start 163.83 59.055)
 		(end 259.08 92.71)
 		(stroke
 			(width 0)
@@ -5809,7 +5889,7 @@
 	)
 	(text "BATTERY CHARGER"
 		(exclude_from_sim no)
-		(at 164.592 58.928 0)
+		(at 163.83 58.928 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5973,7 +6053,7 @@
 		(uuid "b7b06dfb-3b92-4568-a834-b322d6281aff")
 	)
 	(label "VBUS"
-		(at 105.41 157.48 0)
+		(at 55.88 162.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6063,7 +6143,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 87.63 182.88 0)
+		(at 38.1 189.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6072,7 +6152,7 @@
 		(fields_autoplaced yes)
 		(uuid "045f155b-7352-445c-aca8-cee093a245ed")
 		(property "Reference" "#PWR014"
-			(at 87.63 189.23 0)
+			(at 38.1 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6081,7 +6161,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 87.63 187.96 0)
+			(at 38.1 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6090,7 +6170,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 87.63 182.88 0)
+			(at 38.1 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6099,7 +6179,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 87.63 182.88 0)
+			(at 38.1 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6108,7 +6188,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 87.63 182.88 0)
+			(at 38.1 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7910,6 +7990,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 62.23 189.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "63781e12-603e-42eb-82dd-e8591e319289")
+		(property "Reference" "#PWR029"
+			(at 62.23 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 62.23 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 62.23 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a5305b86-39be-477c-9305-b08ac14971d8")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_ARM_JTAG_SWD_10")
 		(at 72.39 46.99 0)
 		(unit 1)
@@ -8065,6 +8212,76 @@
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 58.42 181.61 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "67b9a72c-4d8a-47c5-9af9-f0dfcb19a699")
+		(property "Reference" "R8"
+			(at 55.88 180.3399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "5.1K"
+			(at 55.88 182.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 58.42 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 58.42 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31fe29bc-758c-4337-8c42-1e14b64429c5")
+		)
+		(pin "2"
+			(uuid "764e99a7-0300-403d-9ff0-97e2a050c8de")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -8769,6 +8986,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 58.42 189.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a42ee37b-8cf9-420f-a078-69a7067b08e8")
+		(property "Reference" "#PWR028"
+			(at 58.42 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 58.42 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 58.42 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "84a4927c-5958-45dd-ac87-01348274bb57")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small_US")
 		(at 229.87 152.4 0)
 		(mirror y)
@@ -8833,6 +9117,73 @@
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 30.48 189.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "adad6af7-c7d3-4d3a-9543-f79a753d6bf2")
+		(property "Reference" "#PWR030"
+			(at 30.48 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 30.48 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 30.48 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "00bbfd86-96fe-4e60-803e-929c9ae5043b")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -9114,7 +9465,7 @@
 	)
 	(symbol
 		(lib_id "Connector:USB_C_Receptacle_PowerOnly_6P")
-		(at 87.63 165.1 0)
+		(at 38.1 170.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9123,15 +9474,15 @@
 		(fields_autoplaced yes)
 		(uuid "c6c93ad0-2565-4b5b-9563-a5154ca1cca8")
 		(property "Reference" "J2"
-			(at 87.63 147.32 0)
+			(at 38.1 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "USB_C_Receptacle_PowerOnly_6P"
-			(at 87.63 149.86 0)
+		(property "Value" "USB_C_Charge_Port"
+			(at 38.1 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9139,7 +9490,7 @@
 			)
 		)
 		(property "Footprint" "CUI-Devices:UJC-HP2-3-SMT-TR"
-			(at 91.44 162.56 0)
+			(at 41.91 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9148,7 +9499,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
-			(at 87.63 165.1 0)
+			(at 38.1 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9157,7 +9508,7 @@
 			)
 		)
 		(property "Description" "USB Power-Only 6P Type-C Receptacle connector"
-			(at 87.63 165.1 0)
+			(at 38.1 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9417,6 +9768,76 @@
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 62.23 181.61 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d98c9f6f-af9a-4191-b741-342c9a45f837")
+		(property "Reference" "R9"
+			(at 64.77 180.3399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "5.1K"
+			(at 64.77 182.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 62.23 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 62.23 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8ced43a1-7499-45fc-bf27-adf52f838442")
+		)
+		(pin "2"
+			(uuid "f24554f0-0a36-439f-9c35-2d1be23595a4")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "R9")
 					(unit 1)
 				)
 			)
