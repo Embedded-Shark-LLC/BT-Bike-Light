@@ -4,7 +4,7 @@
 ![HW architecture diagram](/docs/DWG_HW-Architecture.svg)
 
 ## Major components
-| Description           | Part Number           | Manufacturer          | Notes                          |
+| Description           | Part Number           | Manufacturer          | Comments                          |
 | --------------------- | --------------------- | --------------------- | --------------------------------- |
 | Bluetooth module      | BC805M                | Fanstel               | 1.7-3.6 V, 10 GPIO                |
 | USB C port            | UJC-HP2-3-SMT-TR      | CUI                   | Power only, right angle           |
@@ -22,3 +22,4 @@
 ## Minor components
 | Description           | Part Number           | Manufacturer          | Comments                          |
 | --------------------- | --------------------- | --------------------- | --------------------------------- |
+| 10K NTC thermistor    | ERT-J0EM103J          | Panasonic             | B25/50 = 3900K                    |
