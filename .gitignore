@@ -31,3 +31,6 @@ fp-info-cache
 
 # draw.io
 *.drawio.bkp
+
+# 3D models (ignored for licensing reasons)
+3Dmodels

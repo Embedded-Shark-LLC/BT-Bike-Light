@@ -6,7 +6,7 @@
 	(paper "USLetter")
 	(title_block
 		(title "BT Bike Light")
-		(date "2024-08-24")
+		(date "2024-08-25")
 		(rev "A")
 		(company "Embedded Shark, LLC")
 		(comment 1 "Ben Owen")
@@ -1039,7 +1039,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.01"
+		(property "Value" "0.03"
 			(at 154.432 102.87 0)
 			(effects
 				(font

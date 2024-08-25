@@ -6,7 +6,7 @@
 	(paper "USLetter")
 	(title_block
 		(title "BT Bike Light")
-		(date "2024-08-24")
+		(date "2024-08-25")
 		(rev "A")
 		(company "Embedded Shark, LLC")
 		(comment 1 "Ben Owen")
@@ -713,6 +713,126 @@
 				)
 			)
 		)
+		(symbol "power:+BATT"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+BATT"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+BATT\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power battery"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+BATT_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+BATT_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -822,6 +942,12 @@
 		(color 0 0 0 0)
 		(uuid "4b354c95-5f19-450b-9888-21ba52ad2625")
 	)
+	(junction
+		(at 118.11 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62bb2f82-15b7-4239-9570-bf918297ff50")
+	)
 	(no_connect
 		(at 167.64 92.71)
 		(uuid "a20cb4de-b206-41dd-8e2f-c6dd565fb2b4")
@@ -915,6 +1041,16 @@
 			(type default)
 		)
 		(uuid "7b1c536f-8ff0-4b77-9d24-ca474ae825d6")
+	)
+	(wire
+		(pts
+			(xy 118.11 86.36) (xy 118.11 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0ad3e7c-115f-45d7-8224-ebc11a4890c6")
 	)
 	(wire
 		(pts
@@ -1157,7 +1293,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2ba1465a-7bd2-48cc-8002-c758a7a4766a")
-		(property "Reference" "#PWR0501"
+		(property "Reference" "#PWR0502"
 			(at 118.11 111.76 0)
 			(effects
 				(font
@@ -1207,6 +1343,72 @@
 		)
 		(instances
 			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2/ec5dace2-0a24-46f6-a2b0-71991eb2cd39"
+					(reference "#PWR0502")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 118.11 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "79bb1ae1-42f2-4a7e-b45b-69d5d173c83c")
+		(property "Reference" "#PWR0501"
+			(at 118.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 118.11 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 118.11 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 118.11 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 118.11 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ec911c58-e55a-4c7d-b605-ab682c915f69")
+		)
+		(instances
+			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2/ec5dace2-0a24-46f6-a2b0-71991eb2cd39"
 					(reference "#PWR0501")
 					(unit 1)
@@ -1297,7 +1499,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8492ef8e-5cd2-41d1-803e-4cad99f1b779")
-		(property "Reference" "#PWR0503"
+		(property "Reference" "#PWR0504"
 			(at 162.56 111.76 0)
 			(effects
 				(font
@@ -1348,7 +1550,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2/ec5dace2-0a24-46f6-a2b0-71991eb2cd39"
-					(reference "#PWR0503")
+					(reference "#PWR0504")
 					(unit 1)
 				)
 			)
@@ -1522,7 +1724,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e473753e-0424-4d86-b2a5-731f13c72ca2")
-		(property "Reference" "#PWR0502"
+		(property "Reference" "#PWR0503"
 			(at 132.08 111.76 0)
 			(effects
 				(font
@@ -1573,7 +1775,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2/ec5dace2-0a24-46f6-a2b0-71991eb2cd39"
-					(reference "#PWR0502")
+					(reference "#PWR0503")
 					(unit 1)
 				)
 			)
@@ -1589,7 +1791,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0a9ddcf-b020-400e-9b56-68dbf6d24f29")
-		(property "Reference" "#PWR0504"
+		(property "Reference" "#PWR0505"
 			(at 172.72 111.76 0)
 			(effects
 				(font
@@ -1640,7 +1842,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2/ec5dace2-0a24-46f6-a2b0-71991eb2cd39"
-					(reference "#PWR0504")
+					(reference "#PWR0505")
 					(unit 1)
 				)
 			)
