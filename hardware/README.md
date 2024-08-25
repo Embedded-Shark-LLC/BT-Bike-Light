@@ -24,5 +24,4 @@
 | --------------------- | --------------------- | --------------------- | --------------------------------- |
 | Resettable fuse       | PTS18126V260          | Eaton                 | 2.6 A hold, 5 A trip, 6 V max     |
 | 10K NTC thermistor    | ERT-J0EM103J          | Panasonic             | B25/50 = 3900K                    |
-| Dual NMOS FET         | DMG4800LSD            | Diodes Incorporated   | 22 mOhm @ Vgs = 4.5 V             |
 | Buzzer NMOS FET       | DMN3731U-7            | Diodes Incorporated   | Vgs < 1.8 V                       |
