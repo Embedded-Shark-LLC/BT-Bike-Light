@@ -205,6 +205,24 @@
 					)
 				)
 			)
+			(pin unspecified line
+				(at -8.89 -3.81 0)
+				(length 2.54) hide
+				(name "EP"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 		)
 	)
 )
