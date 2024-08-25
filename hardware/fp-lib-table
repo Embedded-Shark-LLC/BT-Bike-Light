@@ -4,4 +4,5 @@
   (lib (name "Samtech")(type "KiCad")(uri "${KIPRJMOD}/libs/Samtech.pretty")(options "")(descr ""))
   (lib (name "PUI-Audio")(type "KiCad")(uri "${KIPRJMOD}/libs/PUI-Audio.pretty")(options "")(descr ""))
   (lib (name "CUI-Devices")(type "KiCad")(uri "${KIPRJMOD}/libs/CUI-Devices.pretty")(options "")(descr ""))
+  (lib (name "Keystone")(type "KiCad")(uri "${KIPRJMOD}/libs/Keystone.pretty")(options "")(descr ""))
 )
