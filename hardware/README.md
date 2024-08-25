@@ -23,5 +23,7 @@
 | Description           | Part Number           | Manufacturer          | Comments                          |
 | --------------------- | --------------------- | --------------------- | --------------------------------- |
 | Resettable fuse       | PTS18126V260          | Eaton                 | 2.6 A hold, 5 A trip, 6 V max     |
-| 10K NTC thermistor    | ERT-J0EM103J          | Panasonic             | B25/50 = 3900K                    |
+| 10K NTC thermistor    | ERT-J0EM103J          | Panasonic             | B25/50 = 3900K, 0402              |
 | Buzzer NMOS FET       | DMN3731U-7            | Diodes Incorporated   | Vgs < 1.8 V                       |
+| 200K resistor         | ERA-3AEB204V          | Panasonic             | 0.1% tolerance, 0603              |
+| 10mR resistor         | PA0603FRE570R01L      | YAGEO                 | 1% tolerance, 0603                |
