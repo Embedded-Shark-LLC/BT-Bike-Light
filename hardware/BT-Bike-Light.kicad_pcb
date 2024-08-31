@@ -3313,6 +3313,17 @@
 			(thermal_bridge_angle 45)
 			(uuid "98884951-795a-4272-bd36-ddf10ff2af28")
 		)
+		(model "${KIPRJMOD}/libs/3Dmodels/HSMF-C114--3DModel-STEP-1.STEP"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 0 0)
+			)
+		)
 	)
 	(footprint "PUI-Audio:SMT-0827-S-HT-R"
 		(layer "F.Cu")
@@ -3503,6 +3514,17 @@
 			(pintype "passive")
 			(thermal_bridge_angle 45)
 			(uuid "f0d3680c-a5e3-4202-83b7-a04ea3e255bc")
+		)
+		(model "${KIPRJMOD}/libs/3Dmodels/SMT-0827-S-HT-R.step"
+			(offset
+				(xyz 0 0 1.5)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 0 -180)
+			)
 		)
 	)
 	(footprint "Inductor_SMD:L_0805_2012Metric"
@@ -4965,6 +4987,17 @@
 			(thermal_bridge_angle 45)
 			(uuid "c70edaf6-2d4e-45d3-9f5d-2c6c3209b2c5")
 		)
+		(model "${KIPRJMOD}/libs/3Dmodels/CON10_2X5_DUK_FTSH_SAI.step"
+			(offset
+				(xyz 2.5 2 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Fuse:Fuse_1812_4532Metric"
 		(layer "F.Cu")
@@ -5689,7 +5722,7 @@
 			(solder_paste_margin_ratio -0.2)
 			(uuid "17b627ee-fd75-4e17-8d95-520cff35fb2f")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/Package_SO.3dshapes/Diodes_SO-8EP.wrl"
+		(model "${KICAD8_3DMODEL_DIR}/Package_SO.3dshapes/SO-8_3.9x4.9mm_P1.27mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -6436,7 +6469,7 @@
 			(pintype "passive+no_connect")
 			(uuid "974f6a00-a7d0-4738-a301-cf3786727d2b")
 		)
-		(model "${KICAD8_3DMODEL_DIR}/LED_SMD.3dshapes/LED_Cree-XP.wrl"
+		(model "${KIPRJMOD}/libs/3Dmodels/XLamp XP-E2 XP-G2.STEP"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9653,17 +9686,6 @@
 				(xyz 0 0 0)
 			)
 		)
-	)
-	(gr_rect
-		(start 85.4 75.7)
-		(end 119.4 125.7)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill solid)
-		(layer "Dwgs.User")
-		(uuid "304a127a-d143-45a1-9493-310bd20e6c3f")
 	)
 	(gr_arc
 		(start 167.5 130)
