@@ -9,8 +9,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "Bluetooth Bike Light")
-		(date "2024-08-24")
-		(rev "A")
+		(date "2024-08-30")
+		(rev "00A")
 		(company "Embedded Shark, LLC")
 		(comment 1 "Ben Owen")
 	)
@@ -9738,6 +9738,19 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "fa5cf2df-6956-4023-8845-e2f1ac3111dc")
+	)
+	(gr_text "REV.${REVISION}\n${COMPANY}\n${CURRENT_DATE}"
+		(at 137.3 105 0)
+		(layer "F.SilkS" knockout)
+		(uuid "68dba7ba-72b9-4bea-83f7-c3d8907a0127")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left)
+		)
 	)
 	(dimension
 		(type aligned)
