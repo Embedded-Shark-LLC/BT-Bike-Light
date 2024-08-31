@@ -14,7 +14,7 @@
 | Button                | PTS645VK58-2 LFS      | C&K                   | Right angle                       |
 | LED driver            | PAM2808               | Diodes Incorporated   | 2.5-6 V, 1.5 A                    |
 | Red LED               | XPEBRD-L1-0000-00901  | Cree                  | 1.5 A, ~2.65 V @ 1.5 A            |
-| Buzzer                | AT-1220-TT-3V-2-R     | PUI Audio             | 2-5 V, 2 kHz, 85 dB @ 3V          |
+| Buzzer                | SMT-0827-S-HT-R       | PUI Audio             | 2-5 V, 2.7 kHz, 85 dB @ 3.6V      |
 | Debug header          | FTSH-105-01-L-DV-K-P  | Samtec                | 10-pin SWD                        |
 
 ## Minor components
