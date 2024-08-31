@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.234 Electron/31.4.0 Safari/537.36" version="24.7.5">
   <diagram name="Page-1" id="b-hXU5d7v4bI59rn8OH2">
-    <mxGraphModel dx="819" dy="571" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="869" dy="590" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -26,42 +26,20 @@
         <mxCell id="JPSjPqsW3roWkfqV_JE0-2" value="Red LED" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
           <mxGeometry x="810" y="375" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="JPSjPqsW3roWkfqV_JE0-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="JPSjPqsW3roWkfqV_JE0-3" target="JPSjPqsW3roWkfqV_JE0-1" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="JPSjPqsW3roWkfqV_JE0-36" value="2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="JPSjPqsW3roWkfqV_JE0-16" vertex="1" connectable="0">
-          <mxGeometry x="-0.0084" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="JPSjPqsW3roWkfqV_JE0-3" value="Accelerometer (I2C)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="330" y="375" width="120" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="JPSjPqsW3roWkfqV_JE0-4" value="Buzzer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="435" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ulriXMYksRP9FhmdlJl3-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="JPSjPqsW3roWkfqV_JE0-5" target="JPSjPqsW3roWkfqV_JE0-6" edge="1">
+        <mxCell id="IxGwrkEJEmRVaj-48T7x-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="JPSjPqsW3roWkfqV_JE0-5" target="JPSjPqsW3roWkfqV_JE0-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="JPSjPqsW3roWkfqV_JE0-5" value="Battery" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="570" y="190" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="JPSjPqsW3roWkfqV_JE0-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JPSjPqsW3roWkfqV_JE0-6" target="JPSjPqsW3roWkfqV_JE0-1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="630" y="340" />
-              <mxPoint x="580" y="340" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="JPSjPqsW3roWkfqV_JE0-6" value="Battery monitor (I2C)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="570" y="270" width="120" height="40" as="geometry" />
+          <mxGeometry x="570" y="280" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ulriXMYksRP9FhmdlJl3-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="JPSjPqsW3roWkfqV_JE0-7" target="JPSjPqsW3roWkfqV_JE0-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="JPSjPqsW3roWkfqV_JE0-7" value="USB-C port" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
-          <mxGeometry x="250" y="190" width="120" height="40" as="geometry" />
+          <mxGeometry x="250" y="280" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JPSjPqsW3roWkfqV_JE0-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="JPSjPqsW3roWkfqV_JE0-8" target="JPSjPqsW3roWkfqV_JE0-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -75,24 +53,14 @@
         <mxCell id="JPSjPqsW3roWkfqV_JE0-10" value="LED driver" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="375" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ulriXMYksRP9FhmdlJl3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JPSjPqsW3roWkfqV_JE0-11" target="JPSjPqsW3roWkfqV_JE0-1" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="470" y="340" />
-              <mxPoint x="520" y="340" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="ulriXMYksRP9FhmdlJl3-10" value="2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ulriXMYksRP9FhmdlJl3-7" vertex="1" connectable="0">
-          <mxGeometry x="0.4528" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="ulriXMYksRP9FhmdlJl3-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="JPSjPqsW3roWkfqV_JE0-11" target="JPSjPqsW3roWkfqV_JE0-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JPSjPqsW3roWkfqV_JE0-11" value="Battery charger" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="190" width="120" height="40" as="geometry" />
+        <mxCell id="IxGwrkEJEmRVaj-48T7x-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="JPSjPqsW3roWkfqV_JE0-11" target="JPSjPqsW3roWkfqV_JE0-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JPSjPqsW3roWkfqV_JE0-11" value="Battery charger/ monitor (I2C)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="280" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JPSjPqsW3roWkfqV_JE0-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="JPSjPqsW3roWkfqV_JE0-12" target="JPSjPqsW3roWkfqV_JE0-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -102,11 +70,19 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="IxGwrkEJEmRVaj-48T7x-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="JPSjPqsW3roWkfqV_JE0-12" target="JPSjPqsW3roWkfqV_JE0-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IxGwrkEJEmRVaj-48T7x-4" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IxGwrkEJEmRVaj-48T7x-3">
+          <mxGeometry x="-0.0236" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="JPSjPqsW3roWkfqV_JE0-12" value="Button" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
           <mxGeometry x="330" y="435" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JPSjPqsW3roWkfqV_JE0-39" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Numbers represent GPIO pins used (not including power, I2C, or SWD pins)&lt;/span&gt;&lt;/div&gt;&lt;br&gt;Other GPIO used:&lt;br&gt;I2C: 2 (SCL/SDA)&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;SWD: 1 (nRST)&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="770" y="210" width="140" height="100" as="geometry" />
+          <mxGeometry x="785" y="460" width="140" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

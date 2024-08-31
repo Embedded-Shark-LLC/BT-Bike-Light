@@ -591,26 +591,6 @@
     [
       "3263b444-391f-435a-aeab-6f7fca8830e2",
       "Root"
-    ],
-    [
-      "fdf0edcf-f2e0-4980-9407-170e14912fc7",
-      "Battery Charger"
-    ],
-    [
-      "4589d81d-fddf-4d45-8e9f-4e0256f87f8c",
-      "Battery Monitor"
-    ],
-    [
-      "acbdc58c-af28-417e-a1e2-8520d08a3724",
-      "Accelerometer"
-    ],
-    [
-      "ec5dace2-0a24-46f6-a2b0-71991eb2cd39",
-      "LED Driver"
-    ],
-    [
-      "42e41419-fa83-4a63-97f5-c538ea6ffd37",
-      "Battery Protection"
     ]
   ],
   "text_variables": {}

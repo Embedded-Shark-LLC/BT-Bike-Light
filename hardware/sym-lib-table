@@ -5,4 +5,5 @@
   (lib (name "Diodes-Incorporated")(type "KiCad")(uri "${KIPRJMOD}/libs/Diodes-Incorporated.kicad_sym")(options "")(descr ""))
   (lib (name "Microchip")(type "KiCad")(uri "${KIPRJMOD}/libs/Microchip.kicad_sym")(options "")(descr ""))
   (lib (name "Texas-Instruments")(type "KiCad")(uri "${KIPRJMOD}/libs/Texas-Instruments.kicad_sym")(options "")(descr ""))
+  (lib (name "Nordic")(type "KiCad")(uri "${KIPRJMOD}/libs/Nordic.kicad_sym")(options "")(descr ""))
 )
