@@ -5856,6 +5856,12 @@
 		(color 0 0 0 0)
 		(uuid "f09502d9-2b6e-441f-8493-bc50bf740bba")
 	)
+	(junction
+		(at 236.22 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4c74314-33a9-46a7-8fc2-ab388d892e23")
+	)
 	(no_connect
 		(at 90.17 184.15)
 		(uuid "055b4cb5-d770-4565-b37d-eda8d0476999")
@@ -6158,6 +6164,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 31.75) (xy 236.22 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "216e2226-eb59-49c7-9f41-9f757558e185")
+	)
+	(wire
+		(pts
 			(xy 102.87 85.09) (xy 105.41 85.09)
 		)
 		(stroke
@@ -6368,6 +6384,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 31.75) (xy 243.84 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "413fb230-e000-4ee4-9e9a-8c83565041d7")
+	)
+	(wire
+		(pts
 			(xy 49.53 173.99) (xy 49.53 175.26)
 		)
 		(stroke
@@ -6375,6 +6401,16 @@
 			(type default)
 		)
 		(uuid "464aaca6-5fe0-4054-9d62-7f077ebbd0ee")
+	)
+	(wire
+		(pts
+			(xy 233.68 31.75) (xy 236.22 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46ccec1e-ae28-41e5-b66a-e44438cda8db")
 	)
 	(wire
 		(pts
@@ -6448,7 +6484,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 142.24) (xy 120.65 142.24)
+			(xy 90.17 147.32) (xy 87.63 147.32)
 		)
 		(stroke
 			(width 0)
@@ -6638,6 +6674,16 @@
 	)
 	(wire
 		(pts
+			(xy 254 31.75) (xy 255.27 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "838cc6f5-770d-44d9-ba4b-6830bc88ab5e")
+	)
+	(wire
+		(pts
 			(xy 143.51 90.17) (xy 143.51 92.71)
 		)
 		(stroke
@@ -6715,6 +6761,16 @@
 			(type default)
 		)
 		(uuid "8fbd4a64-c684-48a0-8970-1bbddfef0d4b")
+	)
+	(wire
+		(pts
+			(xy 255.27 31.75) (xy 255.27 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90aa1442-07f6-4f5b-9891-8ef4e7adccc7")
 	)
 	(wire
 		(pts
@@ -7018,6 +7074,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 38.1) (xy 236.22 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1dc6480-b04e-4d3a-bef5-9ef5005eda8d")
+	)
+	(wire
+		(pts
 			(xy 100.33 92.71) (xy 105.41 92.71)
 		)
 		(stroke
@@ -7145,6 +7211,16 @@
 			(type default)
 		)
 		(uuid "c90deb98-ce07-4b81-9e33-a8fdc236a4ef")
+	)
+	(wire
+		(pts
+			(xy 236.22 31.75) (xy 236.22 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9a93aed-bcf8-4ec3-9aef-4ef5d7cdf3c3")
 	)
 	(wire
 		(pts
@@ -7563,6 +7639,18 @@
 		(uuid 960d0784-4607-4dc0-bc80-6a710eae77e1)
 	)
 	(rectangle
+		(start 224.79 20.32)
+		(end 260.35 45.72)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid dddb279a-5579-4034-9b95-ffc93817a3b7)
+	)
+	(rectangle
 		(start 184.15 20.32)
 		(end 219.71 45.72)
 		(stroke
@@ -7596,6 +7684,17 @@
 			(justify left bottom)
 		)
 		(uuid "59d100a5-7525-435b-8626-f706ba770d21")
+	)
+	(text "RESET BUTTON"
+		(exclude_from_sim no)
+		(at 224.79 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7198f2f0-944d-4a19-9b4c-5f1af80a82e8")
 	)
 	(text "BATTERY CIRCUITRY"
 		(exclude_from_sim no)
@@ -7729,6 +7828,17 @@
 		)
 		(uuid "35da3367-2e09-429a-9e62-dbb6d7fc7e3c")
 	)
+	(label "nRST"
+		(at 233.68 31.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "506ac2bd-be94-4cf9-994c-ce327b936445")
+	)
 	(label "SCL"
 		(at 120.65 144.78 0)
 		(fields_autoplaced yes)
@@ -7796,13 +7906,13 @@
 		(uuid "7ac89f7a-460b-4a8d-b5bd-dfd49376dfc8")
 	)
 	(label "BTN"
-		(at 120.65 142.24 0)
+		(at 87.63 147.32 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "8014b40a-1259-40cd-9a21-1f752a9cc9e4")
 	)
@@ -7947,7 +8057,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0018f9ba-fd57-47b6-928f-eda2a0bbd6f9")
-		(property "Reference" "U103"
+		(property "Reference" "U101"
 			(at 218.44 54.102 0)
 			(effects
 				(font
@@ -8020,7 +8130,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "U103")
+					(reference "U101")
 					(unit 1)
 				)
 			)
@@ -8036,7 +8146,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "05f4902b-f9b3-48f8-939c-7697375625ea")
-		(property "Reference" "C109"
+		(property "Reference" "C103"
 			(at 191.77 66.0462 0)
 			(effects
 				(font
@@ -8090,7 +8200,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C109")
+					(reference "C103")
 					(unit 1)
 				)
 			)
@@ -8106,7 +8216,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "068dfd0e-ec77-447b-8f2a-a02b5d22a4a6")
-		(property "Reference" "C105"
+		(property "Reference" "C108"
 			(at 161.29 41.9162 0)
 			(effects
 				(font
@@ -8160,7 +8270,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C105")
+					(reference "C108")
 					(unit 1)
 				)
 			)
@@ -8379,7 +8489,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "24d4e5d1-2792-4ff8-8d24-4a7dd089a2eb")
-		(property "Reference" "R106"
+		(property "Reference" "R108"
 			(at 198.12 106.68 90)
 			(effects
 				(font
@@ -8431,7 +8541,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "R106")
+					(reference "R108")
 					(unit 1)
 				)
 			)
@@ -8581,7 +8691,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "29e61c98-5dd8-41f2-9e6a-a1f974887b22")
-		(property "Reference" "R104"
+		(property "Reference" "R102"
 			(at 242.57 76.1999 0)
 			(effects
 				(font
@@ -8635,7 +8745,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "R104")
+					(reference "R102")
 					(unit 1)
 				)
 			)
@@ -8786,7 +8896,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3145c2ad-36d4-48c7-a99c-6ac2e9f1df97")
-		(property "Reference" "C103"
+		(property "Reference" "C106"
 			(at 57.15 36.8362 0)
 			(effects
 				(font
@@ -8840,7 +8950,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C103")
+					(reference "C106")
 					(unit 1)
 				)
 			)
@@ -8856,7 +8966,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "33e902a9-abeb-4f89-a6cd-8ccfdd77278b")
-		(property "Reference" "C104"
+		(property "Reference" "C107"
 			(at 149.86 41.9162 0)
 			(effects
 				(font
@@ -8910,7 +9020,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C104")
+					(reference "C107")
 					(unit 1)
 				)
 			)
@@ -9052,6 +9162,74 @@
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "Q101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 248.92 31.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "412beb7e-988f-42b1-80dc-5bb053e9fba5")
+		(property "Reference" "SW101"
+			(at 248.92 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Button"
+			(at 248.92 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "C&K:PTS636_TH"
+			(at 248.92 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ckswitches.com/media/2779/pts636.pdf"
+			(at 248.92 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 248.92 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "25f2444f-a056-4858-9851-2c51ffdffe64")
+		)
+		(pin "1"
+			(uuid "c9297845-1c21-48d5-9a59-ce8df8538091")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "SW101")
 					(unit 1)
 				)
 			)
@@ -10330,7 +10508,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82e19630-af5e-410c-888b-d95aa67b6a4b")
-		(property "Reference" "D102"
+		(property "Reference" "D101"
 			(at 236.22 67.3099 90)
 			(effects
 				(font
@@ -10387,7 +10565,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "D102")
+					(reference "D101")
 					(unit 1)
 				)
 			)
@@ -10534,7 +10712,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8b754374-ec0a-4395-b4e3-1229b8ae8910")
-		(property "Reference" "C102"
+		(property "Reference" "C112"
 			(at 127 153.6762 0)
 			(effects
 				(font
@@ -10588,7 +10766,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C102")
+					(reference "C112")
 					(unit 1)
 				)
 			)
@@ -10668,7 +10846,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8dee537d-b580-4e1c-b382-3225364b4e44")
-		(property "Reference" "R112"
+		(property "Reference" "R106"
 			(at 99.06 75.184 90)
 			(effects
 				(font
@@ -10720,7 +10898,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "R112")
+					(reference "R106")
 					(unit 1)
 				)
 			)
@@ -10801,7 +10979,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f7a7144-7a9f-41f1-9af8-c62a95a0bcde")
-		(property "Reference" "U101"
+		(property "Reference" "U103"
 			(at 104.14 127 0)
 			(effects
 				(font
@@ -10967,7 +11145,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "U101")
+					(reference "U103")
 					(unit 1)
 				)
 			)
@@ -10982,7 +11160,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "920e7436-5825-4d00-9fc2-d19c17bc1468")
-		(property "Reference" "C106"
+		(property "Reference" "C109"
 			(at 86.36 46.9962 0)
 			(effects
 				(font
@@ -11036,7 +11214,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C106")
+					(reference "C109")
 					(unit 1)
 				)
 			)
@@ -11175,6 +11353,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 236.22 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "99cd5414-52a3-4dde-a891-706eea1129d4")
+		(property "Reference" "#PWR0130"
+			(at 236.22 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 236.22 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 236.22 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "56767466-b782-4f82-8de5-b0a0c39c36ff")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR0130")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 49.53 101.6 90)
 		(unit 1)
@@ -11183,7 +11428,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9a9e7fe7-2a7e-4ff0-88a8-a692416f1b8c")
-		(property "Reference" "R108"
+		(property "Reference" "R104"
 			(at 49.53 99.314 90)
 			(effects
 				(font
@@ -11235,7 +11480,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "R108")
+					(reference "R104")
 					(unit 1)
 				)
 			)
@@ -11318,7 +11563,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "9f6c3914-fb43-4f94-ae56-152371537310")
-		(property "Reference" "TH102"
+		(property "Reference" "TH101"
 			(at 97.79 51.1174 0)
 			(effects
 				(font
@@ -11372,7 +11617,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "TH102")
+					(reference "TH101")
 					(unit 1)
 				)
 			)
@@ -11788,7 +12033,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "beccb93f-e80a-4ea7-9fa0-1b7248bf1c04")
-		(property "Reference" "SW101"
+		(property "Reference" "SW102"
 			(at 208.28 24.13 0)
 			(effects
 				(font
@@ -11840,7 +12085,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "SW101")
+					(reference "SW102")
 					(unit 1)
 				)
 			)
@@ -11855,7 +12100,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bfa5892b-46e4-4cbf-b0c5-983bcefaf20f")
-		(property "Reference" "C110"
+		(property "Reference" "C102"
 			(at 252.73 66.0462 0)
 			(effects
 				(font
@@ -11909,7 +12154,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C110")
+					(reference "C102")
 					(unit 1)
 				)
 			)
@@ -12125,6 +12370,73 @@
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "#PWR0112")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 255.27 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d35406fa-95d8-4a8c-a36e-6f395af73928")
+		(property "Reference" "#PWR0134"
+			(at 255.27 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 255.27 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 255.27 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 255.27 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 255.27 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2b837f86-8e74-4a07-8c70-1f70874b6390")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR0134")
 					(unit 1)
 				)
 			)
@@ -12406,7 +12718,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e750d527-72c9-4501-893e-ebc8f03c0ab6")
-		(property "Reference" "R113"
+		(property "Reference" "R109"
 			(at 99.06 96.52 0)
 			(effects
 				(font
@@ -12460,7 +12772,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "R113")
+					(reference "R109")
 					(unit 1)
 				)
 			)
@@ -12542,7 +12854,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eddb62ab-c252-45de-a9d1-3d0e3741c495")
-		(property "Reference" "C107"
+		(property "Reference" "C111"
 			(at 77.47 105.4162 0)
 			(effects
 				(font
@@ -12596,7 +12908,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C107")
+					(reference "C111")
 					(unit 1)
 				)
 			)
@@ -12681,7 +12993,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f08d18dd-c319-4544-a97a-7ca353f1c5fe")
-		(property "Reference" "R111"
+		(property "Reference" "R103"
 			(at 49.53 94.234 90)
 			(effects
 				(font
@@ -12733,7 +13045,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "R111")
+					(reference "R103")
 					(unit 1)
 				)
 			)
@@ -12748,7 +13060,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f28875ae-1e10-4468-8031-f987360a8b0f")
-		(property "Reference" "R109"
+		(property "Reference" "R105"
 			(at 49.53 104.394 90)
 			(effects
 				(font
@@ -12800,7 +13112,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "R109")
+					(reference "R105")
 					(unit 1)
 				)
 			)
@@ -12816,7 +13128,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f4285057-2aea-4355-a16a-7d69a6e78268")
-		(property "Reference" "C108"
+		(property "Reference" "C104"
 			(at 161.29 57.1562 0)
 			(effects
 				(font
@@ -12870,7 +13182,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C108")
+					(reference "C104")
 					(unit 1)
 				)
 			)
@@ -12886,7 +13198,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f4a5f9c4-a67c-4b09-9c1c-e9fc9f5dde9e")
-		(property "Reference" "C111"
+		(property "Reference" "C105"
 			(at 171.45 36.8362 0)
 			(effects
 				(font
@@ -12940,7 +13252,7 @@
 		(instances
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "C111")
+					(reference "C105")
 					(unit 1)
 				)
 			)
@@ -13008,6 +13320,144 @@
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "#PWR0129")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 236.22 35.56 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f7d373c1-5d42-4d9a-8e85-1f6c2d42045b")
+		(property "Reference" "C110"
+			(at 233.68 34.2962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 233.68 36.8362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 236.22 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 236.22 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bbfb3ad5-cff9-4313-ba1a-896c23a6a99f")
+		)
+		(pin "1"
+			(uuid "617a066d-b4df-4fc4-a0a6-adcd47256073")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "C110")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 240.03 31.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f956d979-446c-4e77-aa11-48378c514c00")
+		(property "Reference" "R111"
+			(at 240.03 25.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 240.03 27.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 240.03 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 240.03 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "767e4ed1-4a43-4ff5-b568-64e1a0181b54")
+		)
+		(pin "2"
+			(uuid "c1b96d49-4355-4f0b-b857-9d5044f167b9")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "R111")
 					(unit 1)
 				)
 			)
@@ -13093,7 +13543,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fb6d08b8-7dc7-4dcd-87d7-763afb1e1c66")
-		(property "Reference" "D101"
+		(property "Reference" "D102"
 			(at 39.37 88.9 0)
 			(effects
 				(font
@@ -13151,7 +13601,7 @@
 		(instances
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
-					(reference "D101")
+					(reference "D102")
 					(unit 1)
 				)
 			)

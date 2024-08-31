@@ -11,7 +11,8 @@
 | Battery management IC | nPM1300               | Nordic Semiconductor  | 800 mA charge, onboard buck/LDO   |
 | Battery connector     | S2B-PH-K-S            | JST                   | Right angle                       |
 | Battery status LED    | B38G3RGB              | Harvatek              | RGB                               |
-| Button                | PTS645VK58-2 LFS      | C&K                   | Right angle                       |
+| Interface button      | PTS645VK58-2 LFS      | C&K                   | Right angle, THT                  |
+| Reset button          | PTS636 SL43 LFS       | C&K                   | Vertical, THT                     |
 | LED driver            | PAM2808               | Diodes Incorporated   | 2.5-6 V, 1.5 A                    |
 | Red LED               | XPEBRD-L1-0000-00901  | Cree                  | 1.5 A, ~2.65 V @ 1.5 A            |
 | Buzzer                | SMT-0827-S-HT-R       | PUI Audio             | 2-5 V, 2.7 kHz, 85 dB @ 3.6V      |
