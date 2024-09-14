@@ -7,4 +7,5 @@
   (lib (name "Molex")(type "KiCad")(uri "${KIPRJMOD}/libs/footprints/Molex.pretty")(options "")(descr ""))
   (lib (name "Generic_Custom")(type "KiCad")(uri "${KIPRJMOD}/libs/footprints/Generic_Custom.pretty")(options "")(descr ""))
   (lib (name "C&K")(type "KiCad")(uri "${KIPRJMOD}/libs/footprints/C&K.pretty")(options "")(descr ""))
+  (lib (name "Logos")(type "KiCad")(uri "${KIPRJMOD}/libs/footprints/Logos.pretty")(options "")(descr ""))
 )
