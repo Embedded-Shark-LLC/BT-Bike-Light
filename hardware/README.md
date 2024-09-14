@@ -11,7 +11,7 @@
 | Battery management IC | nPM1300               | Nordic Semiconductor  | 800 mA charge, onboard buck/LDO   |
 | Battery connector     | S2B-PH-K-S            | JST                   | Right angle                       |
 | Battery status LED    | B38G3RGB              | Harvatek              | RGB                               |
-| Interface button      | PTS645VK58-2 LFS      | C&K                   | Right angle, THT                  |
+| Interface button      | PTS645VM31-2 LFS      | C&K                   | Right angle, THT                  |
 | Reset button          | PTS636 SL43 LFS       | C&K                   | Vertical, THT                     |
 | LED driver            | PAM2808               | Diodes Incorporated   | 2.5-6 V, 1.5 A                    |
 | Red LED               | XPEBRD-L1-0000-00901  | Cree                  | 1.5 A, ~2.65 V @ 1.5 A            |
@@ -21,7 +21,7 @@
 ## Minor components
 | Description           | Part Number           | Manufacturer          | Comments                          |
 | --------------------- | --------------------- | --------------------- | --------------------------------- |
-| Resettable fuse       | PTS18126V260          | Eaton                 | 2.6 A hold, 5 A trip, 6 V max     |
+| Fuse                  | TR/0603FA5-R          | Eaton                 | 5A rating, 35A breaking capacity  |
 | Buzzer NMOS FET       | DMN3731U-7            | Diodes Incorporated   | Vgs < 1.8 V                       |
 | 10K NTC thermistor    | NCU15XH103F6SRC       | Murata Electronics    | Matches nPM1300 specs, 0402       |
 | 2.2 uH inductor       | WLFM201209M2R2PC      | Walson Technology     | 170 mR DCR, 0805                  |
