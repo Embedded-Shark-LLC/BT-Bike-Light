@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "Fanstel")(type "KiCad")(uri "${KIPRJMOD}/libs/symbols/Fanstel.kicad_sym")(options "")(descr ""))
   (lib (name "Nordic")(type "KiCad")(uri "${KIPRJMOD}/libs/symbols/Nordic.kicad_sym")(options "")(descr ""))
+  (lib (name "STMicroelectronics")(type "KiCad")(uri "${KIPRJMOD}/libs/symbols/STMicroelectronics.kicad_sym")(options "")(descr ""))
 )
