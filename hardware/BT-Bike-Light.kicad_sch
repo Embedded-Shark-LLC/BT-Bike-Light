@@ -6,7 +6,7 @@
 	(paper "USLetter")
 	(title_block
 		(title "BT Bike Light")
-		(date "2024-10-04")
+		(date "2024-10-19")
 		(rev "00A")
 		(company "Embedded Shark, LLC")
 		(comment 1 "Ben Owen")
@@ -6113,12 +6113,6 @@
 		(uuid "8753bc48-aab7-4610-8df2-25c30b6627f9")
 	)
 	(junction
-		(at 201.93 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8f9d700c-9763-4097-81dd-6c6a953c28a1")
-	)
-	(junction
 		(at 85.09 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6271,10 +6265,6 @@
 	(no_connect
 		(at 99.06 54.61)
 		(uuid "86a5e4a5-c90d-4632-8237-0d855c6c09f9")
-	)
-	(no_connect
-		(at 83.82 134.62)
-		(uuid "8e612d72-7f7e-4991-ae70-a96db9ac2512")
 	)
 	(no_connect
 		(at 83.82 179.07)
@@ -6608,6 +6598,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 124.46) (xy 203.2 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30dd2175-9a82-45de-ab0c-71dbf4559242")
+	)
+	(wire
+		(pts
 			(xy 111.76 149.86) (xy 118.11 149.86)
 		)
 		(stroke
@@ -6938,7 +6938,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 121.92) (xy 201.93 121.92)
+			(xy 187.96 121.92) (xy 203.2 121.92)
 		)
 		(stroke
 			(width 0)
@@ -7378,16 +7378,6 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 124.46) (xy 201.93 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b8d52bd5-1469-4ad6-8ea6-5d7d1bd6dde7")
-	)
-	(wire
-		(pts
 			(xy 137.16 91.44) (xy 137.16 90.17)
 		)
 		(stroke
@@ -7475,6 +7465,16 @@
 			(type default)
 		)
 		(uuid "c4d6dbd5-7f72-42fa-9634-28e04d8f56e0")
+	)
+	(wire
+		(pts
+			(xy 81.28 134.62) (xy 83.82 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c51cd354-a14c-4de8-aa5b-9f4cf80ad9e0")
 	)
 	(wire
 		(pts
@@ -7618,16 +7618,6 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 121.92) (xy 203.2 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1ff8a0f-680c-44ed-bb84-b7a6bb971d14")
-	)
-	(wire
-		(pts
 			(xy 208.28 29.21) (xy 208.28 36.83)
 		)
 		(stroke
@@ -7755,16 +7745,6 @@
 			(type default)
 		)
 		(uuid "e2f7c0e6-d98a-4ae6-a455-0c5f13ff0c6b")
-	)
-	(wire
-		(pts
-			(xy 201.93 124.46) (xy 201.93 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e5849701-f25f-4679-9dcf-4ac07efcc3e5")
 	)
 	(wire
 		(pts
@@ -8129,6 +8109,17 @@
 		)
 		(uuid "0653fcd8-23e1-40ee-8f8f-07394a85d480")
 	)
+	(label "LED_EN"
+		(at 200.66 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0a7f7b5a-1939-4d3e-9092-7cb44e20b0ee")
+	)
 	(label "SWDIO"
 		(at 58.42 154.94 0)
 		(fields_autoplaced yes)
@@ -8316,6 +8307,17 @@
 		)
 		(uuid "89fe9776-adee-4301-9c59-10a6cac88ffa")
 	)
+	(label "LED_PWM"
+		(at 81.28 137.16 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9182b8e0-20ed-4efd-9509-b07cb56a852b")
+	)
 	(label "SWCLK"
 		(at 58.42 152.4 0)
 		(fields_autoplaced yes)
@@ -8327,7 +8329,7 @@
 		)
 		(uuid "919a607b-870b-4cbb-97b5-8d16c16ca5e7")
 	)
-	(label "LED_EN"
+	(label "LED_PWM"
 		(at 200.66 127 180)
 		(fields_autoplaced yes)
 		(effects
@@ -8416,7 +8418,7 @@
 		(uuid "e47c708f-bdd6-4adc-89e4-d19960d74490")
 	)
 	(label "LED_EN"
-		(at 81.28 137.16 180)
+		(at 81.28 134.62 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
