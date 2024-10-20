@@ -1,0 +1,8 @@
+{
+    "nrf-connect.applications": [
+        "${workspaceFolder}/firmware/BT-Bike-Light"
+    ],
+    "nrf-connect.boardRoots": [
+        "${workspaceFolder}/firmware"
+    ]
+}

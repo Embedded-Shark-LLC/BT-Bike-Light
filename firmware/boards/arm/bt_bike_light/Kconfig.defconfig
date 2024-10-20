@@ -1,0 +1,13 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_BT_BIKE_LIGHT
+
+config BOARD
+	default "bt_bike_light"
+
+config BT_CTLR
+   default BT
+
+
+endif
