@@ -1,80 +1,36 @@
-#include <zephyr/device.h>
+/**
+ * @file main.c
+ * @author Ben Owen (ben@embeddedshark.com)
+ * @brief Application entry file
+ * 
+ * @date 2024-10-20
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
-#include <zephyr/drivers/gpio.h>
-#include <zephyr/drivers/pwm.h>
-
-#include <zephyr/kernel.h>
+#include "led.h"
 
 #include <zephyr/logging/log.h>
 
 LOG_MODULE_REGISTER(MAIN, LOG_LEVEL_INF);
 
-/* GPIO */
-static const struct gpio_dt_spec gpio_led_en = GPIO_DT_SPEC_GET(DT_NODELABEL(user_gpio), led_en_gpios);
-
-/* PWM */
-#define PWM_LED_PERIOD_US   10000  /* 10000 us = 100 KHz */
-static const struct pwm_dt_spec pwm_led = PWM_DT_SPEC_GET(DT_NODELABEL(pwm_led0));
-
+/**
+ * @brief Application entry point
+ * 
+ * @return int 
+ */
 int main(void)
 {
-    int err;
+    /* Initialize drivers */
+    led_init();
 
-    /* GPIO setup */
-    if (!gpio_is_ready_dt(&gpio_led_en))
-    {
-        LOG_ERR("GPIO device not ready");
-		return -1;
-	}
-    /* Configure LED enable pin */
-    gpio_pin_configure_dt(&gpio_led_en, GPIO_OUTPUT);
-    /* Set default state (OFF) */
-    gpio_pin_set_dt(&gpio_led_en, 0);
-
-    /* PWM setup */
-    if (!pwm_is_ready_dt(&pwm_led))
-    {
-        LOG_ERR("PWM device %s not ready", pwm_led.dev->name);
-        return -1;
-    }
-    /* Set duty cycle (testing) */
-    while (1)
-    {
-        /* Blink HIGH (0.1 s) */
-        err = gpio_pin_set_dt(&gpio_led_en, 1);
-        err = pwm_set_dt(&pwm_led, PWM_LED_PERIOD_US, PWM_LED_PERIOD_US);
-        if (err)
-        {
-            LOG_ERR("Error in pwm_set_dt(), err: %d", err);
-            return -1;
-        }
-        k_msleep(10);
-        err = gpio_pin_set_dt(&gpio_led_en, 0);
-        // err = pwm_set_dt(&pwm_led, PWM_LED_PERIOD_US, 0);
-        if (err)
-        {
-            LOG_ERR("Error in pwm_set_dt(), err: %d", err);
-            return -1;
-        }
-        k_msleep(80);
-        err = gpio_pin_set_dt(&gpio_led_en, 1);
-        err = pwm_set_dt(&pwm_led, PWM_LED_PERIOD_US, PWM_LED_PERIOD_US);
-        if (err)
-        {
-            LOG_ERR("Error in pwm_set_dt(), err: %d", err);
-            return -1;
-        }
-        k_msleep(10);
-        /* Blink LOW (0.4 s) */
-        err = gpio_pin_set_dt(&gpio_led_en, 0);
-        // err = pwm_set_dt(&pwm_led, PWM_LED_PERIOD_US, 0);
-        if (err)
-        {
-            LOG_ERR("Error in pwm_set_dt(), err: %d", err);
-            return -1;
-        }
-        k_msleep(900);
-    }
+    /* Set pattern */
+    // led_set_pattern(LED_PATTERN_BRIGHT_BLINK);
+    // led_set_pattern(LED_PATTERN_DIM_BLINK);
+    // led_set_pattern(LED_PATTERN_BRIGHT_SOLID);
+    // led_set_pattern(LED_PATTERN_DIM_SOLID);
+    led_set_pattern(LED_PATTERN_PULSE);
 
     return 0;
 }

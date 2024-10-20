@@ -3,4 +3,12 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 
 project(nordic)
 
-target_sources(app PRIVATE src/main.c)
+target_include_directories(app PRIVATE src)
+
+# Get all source and header files
+file(GLOB_RECURSE SOURCES src/*.c)
+file(GLOB_RECURSE HEADERS src/*.h)
+
+# Add sources and header files to project
+target_sources(app PRIVATE ${SOURCES})
+target_sources(app PRIVATE ${HEADERS})
