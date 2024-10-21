@@ -12,10 +12,11 @@
 #ifndef __BUTTON_H__
 #define __BUTTON_H__
 
-#define BUTTON_GPIOTE_INSTANCE  0
-#define BUTTON_TIMER_INSTANCE   1
+#define BUTTON_GPIOTE_INSTANCE      0
+#define BUTTON_TIMER_INSTANCE       1
 
-#define BUTTON_LONGPRESS_MS     2000
+#define BUTTON_DEBOUNCE_HOLDOFF_MS  10
+#define BUTTON_LONGPRESS_MS         1500
 
 /**
  * @brief Initialize all peripherals for interface button

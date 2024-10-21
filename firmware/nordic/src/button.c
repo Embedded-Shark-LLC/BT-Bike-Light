@@ -14,14 +14,11 @@
 #include "led.h"
 #include "sys.h"
 
-#include <nrfx_gpiote.h>
-#include <nrfx_ppi.h>
 #include <nrfx_timer.h>
 
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
-#include <zephyr/sys/poweroff.h>
 
 #if (BUTTON_TIMER_INSTANCE == 0)
 #define BUTTON_TIMER_IRQN       TIMER0_IRQn
@@ -40,8 +37,7 @@ LOG_MODULE_REGISTER(BUTTON, LOG_LEVEL_INF);
 /* GPIO */
 static const struct gpio_dt_spec _button_dt = GPIO_DT_SPEC_GET(DT_NODELABEL(user_gpio), button_gpios);
 static struct gpio_callback _button_cb_data;
-static nrfx_gpiote_t _gpiote = NRFX_GPIOTE_INSTANCE(BUTTON_GPIOTE_INSTANCE);
-#define BUTTON_PIN DT_GPIO_PIN(DT_NODELABEL(user_gpio), button_gpios)
+int64_t _button_press_time_last = 0;
 
 /* Timer */
 static nrfx_timer_t _timer_button = NRFX_TIMER_INSTANCE(BUTTON_TIMER_INSTANCE);
@@ -55,8 +51,26 @@ static nrfx_timer_t _timer_button = NRFX_TIMER_INSTANCE(BUTTON_TIMER_INSTANCE);
  */
 void _button_callback(const struct device * port, struct gpio_callback * cb, gpio_port_pins_t pins)
 {
-    nrfx_err_t err;
+    /* Button debounce logic */
+    /* Get current timestamp */
+    int64_t _button_press_time = k_uptime_get();
+    bool _button_bounce = false;
+    /* Check for button bounce */
+    if ((_button_press_time - _button_press_time_last) < BUTTON_DEBOUNCE_HOLDOFF_MS)
+    {
+        LOG_WRN("Button bounce detected");
+        _button_bounce = true;
+    }
+    /* Update last pressed timestamp */
+    _button_press_time_last = _button_press_time;
+    /* Ignore bouncing during wakeup */
+    if ((_button_bounce) && (sys_state == SYS_STATE_RUN))
+    {
+        return;
+    }
 
+    /* If we reach this point debouncing has been accounted for */
+    /* Get button pressed state */
     bool _button_pressed = gpio_pin_get_dt(&_button_dt);
     if (_button_pressed)
     {
@@ -71,21 +85,12 @@ void _button_callback(const struct device * port, struct gpio_callback * cb, gpi
         if (sys_state == SYS_STATE_POWEROFF)
         {
             /* Button press wasn't long enough to wake up, go back to sleep */
-            /* Clear LED */
-            led_set_pattern(LED_PATTERN_OFF);
-            /* Wait until button released */
-            while (gpio_pin_get_dt(&_button_dt));
-            k_msleep(250);  // delay a small period for button bouncing
-            /* Configure interrupt for button (wakeup source) */
-            err = gpio_pin_interrupt_configure_dt(&_button_dt, GPIO_INT_LEVEL_ACTIVE);
-            NRFX_ASSERT(err == 0);
-            /* Put microcontroller to sleep */
-            sys_poweroff();
+            sys_power_off(&_button_dt);
         }
         else if (sys_state == SYS_STATE_WAKEUP)
         {
             /* Button press was long enough to wake up, so we need to ignore short press logic */
-            sys_state = SYS_SYATE_RUN;
+            sys_state = SYS_STATE_RUN;
         }
         else
         {
@@ -105,32 +110,32 @@ void _button_callback(const struct device * port, struct gpio_callback * cb, gpi
  */
 void _timer_callback(nrf_timer_event_t event_type, void * p_context)
 {
-    nrfx_err_t err;
-
     if (event_type == NRF_TIMER_EVENT_COMPARE0)
     {
         /* Timer expired (long press) */
         LOG_DBG("LONG PRESS");
-        if (sys_state == SYS_STATE_POWEROFF)
+        if ((sys_state == SYS_STATE_POWEROFF))
         {
-            /* Need to wake up */
-            sys_state = SYS_STATE_WAKEUP;
-            /* Set boot pattern */
-            led_set_pattern(LED_PATTERN_PULSE);
+            bool _button_pressed = gpio_pin_get_dt(&_button_dt);
+            /* Need to check button state since if the user quickly presses and releases button,
+                the release event will occur before the button GPIO interrupt is configured. */
+            if (_button_pressed)
+            {
+                /* Button still pressed, continue with wake up */
+                sys_state = SYS_STATE_WAKEUP;
+                /* Set boot pattern */
+                led_set_pattern(LED_PATTERN_PULSE);
+            }
+            else
+            {
+                /* Button not pressed, go back to sleep */
+                sys_power_off(&_button_dt);
+            }
         }
         else
         {
-            /* Clear LED */
-            led_set_pattern(LED_PATTERN_OFF);
-            /* Wait until button released */
-            while (gpio_pin_get_dt(&_button_dt));
-            k_msleep(250);  // delay a small period for button bouncing
-            /* Configure interrupt for button (wakeup source) */
-            err = gpio_pin_interrupt_configure_dt(&_button_dt, GPIO_INT_LEVEL_ACTIVE);
-            NRFX_ASSERT(err == 0);
-            /* Put microcontroller to sleep */
-            LOG_WRN("Powering system off");
-            sys_poweroff();
+            /* Shut device off */
+            sys_power_off(&_button_dt);
         }
     }
 }
@@ -153,18 +158,6 @@ void button_init()
 	err = gpio_add_callback(_button_dt.port, &_button_cb_data);
     NRFX_ASSERT(err == 0);
 
-    /* PPI config */
-    /* Allocate PPI channels */
-    nrf_ppi_channel_t _ppi_timer_expire_ch;
-    err = nrfx_ppi_channel_alloc(&_ppi_timer_expire_ch);
-    NRFX_ASSERT(err == NRFX_SUCCESS);
-    /* Assign PPI channels to disable LED driver if timer expires */
-    err = nrfx_ppi_channel_assign(_ppi_timer_expire_ch, nrfx_timer_event_address_get(&_timer_button, NRF_TIMER_EVENT_COMPARE0), nrfx_gpiote_clr_task_address_get(&_gpiote, 12));
-    NRFX_ASSERT(err == NRFX_SUCCESS);
-    /* Enable PPI channels */
-    err = nrfx_ppi_channel_enable(_ppi_timer_expire_ch);
-    NRFX_ASSERT(err == NRFX_SUCCESS);
-
     /* Timer config */
     /* Configure timer parameters */
     nrfx_timer_config_t _timer_button_config =
@@ -179,7 +172,7 @@ void button_init()
     err = nrfx_timer_init(&_timer_button, &_timer_button_config, _timer_callback);
     NRFX_ASSERT(err == NRFX_SUCCESS);
     /* Setup compare channels */
-    nrfx_timer_compare(&_timer_button, NRF_TIMER_CC_CHANNEL0, nrfx_timer_ms_to_ticks(&_timer_button, BUTTON_LONGPRESS_MS), true);
+    nrfx_timer_extended_compare(&_timer_button, NRF_TIMER_CC_CHANNEL0, nrfx_timer_ms_to_ticks(&_timer_button, BUTTON_LONGPRESS_MS), NRF_TIMER_SHORT_COMPARE0_STOP_MASK, true);
     /* Start timer (for long press wake from sleep) */
     nrfx_timer_clear(&_timer_button);
     nrfx_timer_enable(&_timer_button);
