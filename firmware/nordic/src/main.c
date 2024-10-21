@@ -9,8 +9,10 @@
  * 
  */
 
+#include "button.h"
 #include "led.h"
 
+#include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
 LOG_MODULE_REGISTER(MAIN, LOG_LEVEL_INF);
@@ -24,12 +26,9 @@ int main(void)
 {
     /* Initialize drivers */
     led_init();
+    button_init();
 
-    /* Set pattern */
-    // led_set_pattern(LED_PATTERN_BRIGHT_BLINK);
-    // led_set_pattern(LED_PATTERN_DIM_BLINK);
-    // led_set_pattern(LED_PATTERN_BRIGHT_SOLID);
-    // led_set_pattern(LED_PATTERN_DIM_SOLID);
+    /* Set boot pattern */
     led_set_pattern(LED_PATTERN_PULSE);
 
     return 0;

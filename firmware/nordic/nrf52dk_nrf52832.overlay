@@ -17,10 +17,15 @@
 
 / {
 	user_gpio: zephyr,user {
-		led_en-gpios = <&gpio0 12 0>;
+		led_en-gpios = <&gpio0 12 GPIO_PULL_DOWN>;
+		button-gpios = <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	};
 };
 
 &timer0 {
+	status = "okay";
+};
+
+&timer1 {
 	status = "okay";
 };
