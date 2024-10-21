@@ -10,7 +10,9 @@
  */
 
 #include "button.h"
+
 #include "led.h"
+#include "sys.h"
 
 #include <nrfx_gpiote.h>
 #include <nrfx_ppi.h>
@@ -53,6 +55,8 @@ static nrfx_timer_t _timer_button = NRFX_TIMER_INSTANCE(BUTTON_TIMER_INSTANCE);
  */
 void _button_callback(const struct device * port, struct gpio_callback * cb, gpio_port_pins_t pins)
 {
+    nrfx_err_t err;
+
     bool _button_pressed = gpio_pin_get_dt(&_button_dt);
     if (_button_pressed)
     {
@@ -64,13 +68,41 @@ void _button_callback(const struct device * port, struct gpio_callback * cb, gpi
     {
         /* Button released before timer expired (short press) */
         LOG_DBG("SHORT PRESS");
-        /* Disable timer to avoid long press logic triggering */
-        nrfx_timer_disable(&_timer_button);
-        /* If we made it here, this is a short press */
-        led_toggle_pattern();
+        if (sys_state == SYS_STATE_POWEROFF)
+        {
+            /* Button press wasn't long enough to wake up, go back to sleep */
+            /* Clear LED */
+            led_set_pattern(LED_PATTERN_OFF);
+            /* Wait until button released */
+            while (gpio_pin_get_dt(&_button_dt));
+            k_msleep(250);  // delay a small period for button bouncing
+            /* Configure interrupt for button (wakeup source) */
+            err = gpio_pin_interrupt_configure_dt(&_button_dt, GPIO_INT_LEVEL_ACTIVE);
+            NRFX_ASSERT(err == 0);
+            /* Put microcontroller to sleep */
+            sys_poweroff();
+        }
+        else if (sys_state == SYS_STATE_WAKEUP)
+        {
+            /* Button press was long enough to wake up, so we need to ignore short press logic */
+            sys_state = SYS_SYATE_RUN;
+        }
+        else
+        {
+            /* Disable timer to avoid long press logic triggering */
+            nrfx_timer_disable(&_timer_button);
+            /* If we made it here, this is a short press */
+            led_toggle_pattern();
+        }
     }
 }
 
+/**
+ * @brief Callback for timer expired interrupt (long button press)
+ * 
+ * @param event_type 
+ * @param p_context 
+ */
 void _timer_callback(nrf_timer_event_t event_type, void * p_context)
 {
     nrfx_err_t err;
@@ -79,16 +111,27 @@ void _timer_callback(nrf_timer_event_t event_type, void * p_context)
     {
         /* Timer expired (long press) */
         LOG_DBG("LONG PRESS");
-        /* Clear LED */
-        led_set_pattern(LED_PATTERN_OFF);
-        /* Wait until button released */
-        while (gpio_pin_get_dt(&_button_dt));
-        k_msleep(250);  // delay a small period for button bouncing
-        /* Configure interrupt for button (wakeup source) */
-        err = gpio_pin_interrupt_configure_dt(&_button_dt, GPIO_INT_LEVEL_ACTIVE);
-        NRFX_ASSERT(err == 0);
-        /* Put microcontroller to sleep */
-        sys_poweroff();
+        if (sys_state == SYS_STATE_POWEROFF)
+        {
+            /* Need to wake up */
+            sys_state = SYS_STATE_WAKEUP;
+            /* Set boot pattern */
+            led_set_pattern(LED_PATTERN_PULSE);
+        }
+        else
+        {
+            /* Clear LED */
+            led_set_pattern(LED_PATTERN_OFF);
+            /* Wait until button released */
+            while (gpio_pin_get_dt(&_button_dt));
+            k_msleep(250);  // delay a small period for button bouncing
+            /* Configure interrupt for button (wakeup source) */
+            err = gpio_pin_interrupt_configure_dt(&_button_dt, GPIO_INT_LEVEL_ACTIVE);
+            NRFX_ASSERT(err == 0);
+            /* Put microcontroller to sleep */
+            LOG_WRN("Powering system off");
+            sys_poweroff();
+        }
     }
 }
 
@@ -137,6 +180,9 @@ void button_init()
     NRFX_ASSERT(err == NRFX_SUCCESS);
     /* Setup compare channels */
     nrfx_timer_compare(&_timer_button, NRF_TIMER_CC_CHANNEL0, nrfx_timer_ms_to_ticks(&_timer_button, BUTTON_LONGPRESS_MS), true);
+    /* Start timer (for long press wake from sleep) */
+    nrfx_timer_clear(&_timer_button);
+    nrfx_timer_enable(&_timer_button);
     /* Needed to handle timer compare interrupts */
     IRQ_CONNECT(BUTTON_TIMER_IRQN, 0, NRFX_TIMER_INST_HANDLER_GET(BUTTON_TIMER_INSTANCE), NULL, 0);  // priority must be higher than GPIOTE to avoid button release event immediately waking up device
 }

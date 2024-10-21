@@ -28,8 +28,5 @@ int main(void)
     led_init();
     button_init();
 
-    /* Set boot pattern */
-    led_set_pattern(LED_PATTERN_PULSE);
-
     return 0;
 }
