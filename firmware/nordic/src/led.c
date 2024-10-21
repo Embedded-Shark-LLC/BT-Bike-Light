@@ -123,15 +123,6 @@ nrf_pwm_values_common_t _pwm_pattern_pulse[] =
     800,  810,  820,  830,  840,  850,  860,  870,  880,  890,
     900,  910,  920,  930,  940,  950,  960,  970,  980,  990,
     1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-    1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
 };
 nrf_pwm_sequence_t _pwm_seq_pulse =
 {
@@ -158,13 +149,16 @@ nrf_ppi_channel_t _ppi_second_blink_end_ch;
 static nrfx_pwm_t _pwm_led = NRFX_PWM_INSTANCE(LED_PWM_INSTANCE);
 #define LED_PWM_PIN 17
 
+/* Other locals */
+led_pattern_t _current_pattern;
+
 void led_init()
 {
     nrfx_err_t err;
 
     /* GPIO config */
     /* Initialize GPIO */
-    err = nrfx_gpiote_init(&_gpiote, 1);
+    err = nrfx_gpiote_init(&_gpiote, NRFX_GPIOTE_DEFAULT_CONFIG_IRQ_PRIORITY);
     NRFX_ASSERT(err == NRFX_SUCCESS);
     /* Generate output configurations */
     nrfx_gpiote_output_config_t _led_en_config = NRFX_GPIOTE_DEFAULT_OUTPUT_CONFIG;
@@ -240,6 +234,8 @@ void led_set_pattern(led_pattern_t pattern)
     NRFX_ASSERT(err == NRFX_SUCCESS);
     /* Disable PWM sequence */
     nrfx_pwm_stop(&_pwm_led, true);
+    /* Store new pattern */
+    _current_pattern = pattern;
 
     /* Set up pattern */
     switch (pattern)
@@ -282,7 +278,7 @@ void led_set_pattern(led_pattern_t pattern)
             /* Pattern is 2 quick blinks, otherwise dim */
             /* Enable LED driver constantly (PWM pattern will handle blinks) */
             nrfx_gpiote_set_task_trigger(&_gpiote, LED_EN_PIN);
-            /* Set PWM sequence to blink pattern */
+            /* Set PWM sequence to dim blink pattern */
             nrfx_pwm_simple_playback(&_pwm_led, &_pwm_seq_dim_blink, 1, NRFX_PWM_FLAG_LOOP);
             break;
         }
@@ -292,7 +288,7 @@ void led_set_pattern(led_pattern_t pattern)
             /* Pattern is solid bright */
             /* Enable LED driver constantly (PWM pattern will handle brightness) */
             nrfx_gpiote_set_task_trigger(&_gpiote, LED_EN_PIN);
-            /* Set PWM sequence to blink pattern */
+            /* Set PWM sequence to bright solid pattern */
             nrfx_pwm_simple_playback(&_pwm_led, &_pwm_seq_mid, 1, NRFX_PWM_FLAG_LOOP);
             break;
         }
@@ -302,7 +298,7 @@ void led_set_pattern(led_pattern_t pattern)
             /* Pattern is solid dim */
             /* Enable LED driver constantly (PWM pattern will handle brightness) */
             nrfx_gpiote_set_task_trigger(&_gpiote, LED_EN_PIN);
-            /* Set PWM sequence to blink pattern */
+            /* Set PWM sequence to dim solid pattern */
             nrfx_pwm_simple_playback(&_pwm_led, &_pwm_seq_dim, 1, NRFX_PWM_FLAG_LOOP);
             break;
         }
@@ -312,7 +308,7 @@ void led_set_pattern(led_pattern_t pattern)
             /* Pattern is pulse from dim to bright to dim */
             /* Enable LED driver constantly (PWM pattern will handle pulse) */
             nrfx_gpiote_set_task_trigger(&_gpiote, LED_EN_PIN);
-            /* Set PWM sequence to blink pattern */
+            /* Set PWM sequence to pulse pattern */
             nrfx_pwm_simple_playback(&_pwm_led, &_pwm_seq_pulse, 1, NRFX_PWM_FLAG_LOOP);
             break;
         }
@@ -320,6 +316,10 @@ void led_set_pattern(led_pattern_t pattern)
         case (LED_PATTERN_OFF):
         {
             /* Pattern is off */
+            /* Disable LED driver */
+            nrfx_gpiote_clr_task_trigger(&_gpiote, LED_EN_PIN);
+            // /* Set PWM sequence to blink pattern */
+            // nrfx_pwm_simple_playback(&_pwm_led, &_pwm_seq_mid, 1, NRFX_PWM_FLAG_LOOP);
             break;
         }
 
@@ -330,4 +330,10 @@ void led_set_pattern(led_pattern_t pattern)
             break;
         }
     }
+}
+
+void led_toggle_pattern()
+{
+    _current_pattern = (_current_pattern + 1) % LED_PATTERN_NUM_PATTERNS;
+    led_set_pattern(_current_pattern);
 }

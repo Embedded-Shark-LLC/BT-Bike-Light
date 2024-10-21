@@ -18,12 +18,13 @@
 
 typedef enum
 {
-    LED_PATTERN_BRIGHT_BLINK,
-    LED_PATTERN_DIM_BLINK,
-    LED_PATTERN_BRIGHT_SOLID,
-    LED_PATTERN_DIM_SOLID,
-    LED_PATTERN_PULSE,
-    LED_PATTERN_OFF,
+    LED_PATTERN_BRIGHT_BLINK    = 0,
+    LED_PATTERN_DIM_BLINK       = 1,
+    LED_PATTERN_BRIGHT_SOLID    = 2,
+    LED_PATTERN_DIM_SOLID       = 3,
+    LED_PATTERN_PULSE           = 4,
+    LED_PATTERN_NUM_PATTERNS,   // TOTAL NUMBER OF PATTERNS TO CYCLE
+    LED_PATTERN_OFF,            // WILL NOT CYCLE TO OFF
 }
 led_pattern_t;
 
@@ -41,3 +42,9 @@ void led_init();
  * @param pattern 
  */
 void led_set_pattern(led_pattern_t pattern);
+
+/**
+ * @brief Toggle blink pattern (cycle through all patterns)
+ * 
+ */
+void led_toggle_pattern();
