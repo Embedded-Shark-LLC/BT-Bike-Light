@@ -39,6 +39,7 @@ void sys_power_off(const struct gpio_dt_spec * button_dt)
 {
     nrfx_err_t err;
 
+    // TODO: Turn off accelerometer - setting CTRL1 to 0x0000 will put device into power-down mode
     /* Clear LED */
     led_set_pattern(LED_PATTERN_OFF);
     /* Wait until button released */

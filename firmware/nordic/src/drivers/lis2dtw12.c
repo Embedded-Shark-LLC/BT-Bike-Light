@@ -66,6 +66,10 @@ LOG_MODULE_REGISTER(LIS2DTW12, LOG_LEVEL_INF);
 /* Struct to hold LIS2DTW12 data */
 struct st_lis2dtw12_data
 {
+    int16_t temp;
+    int16_t accel_x;
+    int16_t accel_y;
+    int16_t accel_z;
     uint8_t chip_id;
 };
 
@@ -80,14 +84,42 @@ struct st_lis2dtw12_config
 /* I2C */
 static const struct i2c_dt_spec _i2c_accel = I2C_DT_SPEC_GET(DT_NODELABEL(lis2dtw12));
 
-void lis2dtw12_reg_read_byte(uint8_t reg, uint8_t * data)
+/**
+ * @brief Private function to read one or more registers from accelerometer over I2C
+ * 
+ * @param reg register to read
+ * @param data buffer to hold read data
+ * @param length number of bytes to read
+ */
+void _lis2dtw12_reg_read(uint8_t reg, void * data, uint8_t length)
 {
     int err;
     /* Store register in tx buffer */
     uint8_t _dev_registers[1] = { reg };
 
+    /* Write register address to slave and read data back
+        LIS2DTW12 requires a write before read */
+    err = i2c_write_read_dt(&_i2c_accel, _dev_registers, sizeof(_dev_registers), data, length);
+    __ASSERT(err == 0, "Failed to read I2C device address 0x%02x at register 0x%02x (err: %d)\n\r", _i2c_accel.addr, _dev_registers[0], err);
+}
+
+/**
+ * @brief Private function to write to one or more registers to accelerometer over I2C
+ * 
+ * @param reg register to write
+ * @param data buffer holding write data
+ * @param length number of bytes to write
+ */
+void _lis2dtw12_reg_write(uint8_t reg, void * data, uint8_t length)
+{
+    int err;
+    /* Store register in tx buffer */
+    uint8_t _write_data[length + 1];
+    _write_data[0] = reg;
+    memcpy(&_write_data[1], data, length);
+
     /* Write register address to slave and read data back */
-    err = i2c_write_read_dt(&_i2c_accel, _dev_registers, 1, data, 1);
+    err = i2c_write_dt(&_i2c_accel, _write_data, sizeof(_write_data));
     __ASSERT(err == 0, "Failed to read I2C device address 0x%02x at register 0x%02x (err: %d)\n\r", _i2c_accel.addr, _dev_registers[0], err);
 }
 
@@ -96,7 +128,22 @@ void lis2dtw12_init()
     /* Make sure I2C bus is ready */
     __ASSERT(device_is_ready(_i2c_accel.bus), "I2C bus is not ready");
     /* Read device ID */
-	lis2dtw12_reg_read_byte(WHO_AM_I, &(_data.chip_id));
-
+	_lis2dtw12_reg_read(WHO_AM_I, &(_data.chip_id), 1);
     LOG_WRN("Chip ID: 0x%02x", _data.chip_id);
+
+    /* Set up accelerometer control registers */
+    /* CTRL1:
+        ODR[3:0] = 0101: Low-power mode 100 Hz
+        MODE[1:0] = 00: Low-power mode 12/14 bit resolution
+        LP_MODE[1:0] = 00: Low-power mode 1 */
+	uint8_t _ctrl1_data[1] = { 0b01010000 };
+    _lis2dtw12_reg_write(CTRL1, _ctrl1_data, 1);
+    /* Wait for device to poll some data */
+    k_msleep(10);
+
+    /* Read temperature */
+    _lis2dtw12_reg_read(OUT_T_L, &(_data.temp), 2);
+    /* Convert temperature to celsius (integer, no decimals) */
+    _data.temp >>= 8;   // 16 LSB per C, need to shift 4 additional since its 12-bit left-aligned
+    _data.temp += 25;   // 0 LSB = 25 C
 }
