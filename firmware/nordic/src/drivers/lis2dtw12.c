@@ -30,9 +30,9 @@ LOG_MODULE_REGISTER(LIS2DTW12, LOG_LEVEL_INF);
 #define CTRL1               0x20    // Control registers
 #define CTRL2               0x21
 #define CTRL3               0x22
-#define CTRL4_INT1_PAD_CTRL 0x22
-#define CTRL5_INT2_PAD_CTRL 0x22
-#define CTRL6               0x22
+#define CTRL4_INT1_PAD_CTRL 0x23
+#define CTRL5_INT2_PAD_CTRL 0x24
+#define CTRL6               0x25
 #define STATUS              0x27    // Status data register
 #define OUT_X_L             0x28    // Output registers
 #define OUT_X_H             0x29
@@ -107,16 +107,16 @@ void _lis2dtw12_reg_read(uint8_t reg, void * data, uint8_t length)
  * @brief Private function to write to one or more registers to accelerometer over I2C
  * 
  * @param reg register to write
- * @param data buffer holding write data
+ * @param data register data to write
  * @param length number of bytes to write
  */
-void _lis2dtw12_reg_write(uint8_t reg, void * data, uint8_t length)
+void _lis2dtw12_reg_write(uint8_t reg, uint8_t data, uint8_t length)
 {
     int err;
     /* Store register in tx buffer */
     uint8_t _write_data[length + 1];
     _write_data[0] = reg;
-    memcpy(&_write_data[1], data, length);
+    _write_data[1] = data;
 
     /* Write register address to slave and read data back */
     err = i2c_write_dt(&_i2c_accel, _write_data, sizeof(_write_data));
@@ -131,13 +131,62 @@ void lis2dtw12_init()
 	_lis2dtw12_reg_read(WHO_AM_I, &(_data.chip_id), 1);
     LOG_WRN("Chip ID: 0x%02x", _data.chip_id);
 
+    /* Boot procedure
+        This ensures that the registers are all reset when the device is reset without power cycling */
+    _lis2dtw12_reg_write(CTRL2, 0b01000000, 1);
+    k_usleep(5);
+    _lis2dtw12_reg_write(CTRL2, 0b10000000, 1);
+    k_msleep(20);
+
     /* Set up accelerometer control registers */
     /* CTRL1:
-        ODR[3:0] = 0101: Low-power mode 100 Hz
-        MODE[1:0] = 00: Low-power mode 12/14 bit resolution
-        LP_MODE[1:0] = 00: Low-power mode 1 */
-	uint8_t _ctrl1_data[1] = { 0b01010000 };
-    _lis2dtw12_reg_write(CTRL1, _ctrl1_data, 1);
+        ODR[3:0] = 0011: Low-power mode 25 Hz
+        MODE[1:0] = 00: Low-power mode (12/14-bit resolution)
+        LP_MODE[1:0] = 00: Low-power mode 1 (12 bit resolution) */
+    _lis2dtw12_reg_write(CTRL1, 0b01100100, 1);
+    /* CTRL4_INT1_PAD_CTRL:
+        INT1_6D = 0: 6D recognition interrupt disabled
+        INT1_SINGLE_TAP = 0: Single-tap interrupt disabled
+        INT1_WU = 1: Wake-up recognition interrupt enabled on INT1
+        INT1_FF = 0: Free-fall recognition interrupt disabled
+        INT1_TAP = 0: Double-tap recognition interrupt disabled
+        INT1_DIFF5 = 0: FIFO full recognition interrupt disabled
+        INT1_FTH = 0: FIFO threshold interrupt disabled
+        INT1_DRDY = 0: Data-ready interrupt disabled */
+    _lis2dtw12_reg_write(CTRL4_INT1_PAD_CTRL, 0b00100000, 1);
+    /* CTRL5_INT2_PAD_CTRL:
+        INT2_SLEEP_STATE = 1: Enable routing SLEEP_STATE to INT2
+        INT2_SLEEP_CHG = 1: Sleep change status routed to INT2
+        INT2_BOOT = 0: Boot state indication disabled
+        INT2_DRDY_T = 0: Temperature data-ready interrupt disabled
+        INT2_OVR = 0: FIFO overrun interrupt disabled
+        INT2_DIFF5 = 0: FIFO full recognition interrupt disabled
+        INT2_FTH = 0: FIFO threshold interrupt disabled
+        INT2_DRDY = 0: Data-ready interrupt disabled */
+    _lis2dtw12_reg_write(CTRL5_INT2_PAD_CTRL, 0b11000000, 1);
+    _lis2dtw12_reg_write(CTRL6, 0b01001100, 1); // TODO ODR/4, +- 2g, low pass, low noise
+    /* WAKE_UP_THS:
+        SINGLE_DOUBLE_TAP = 0: Disable single/double-tap event
+        SLEEP_ON = 1: Enable sleep (inactivity)
+        WK_THS[5:0] = 000010: Wake-up threshold (62.5 mg for FS of 2 g) */
+    _lis2dtw12_reg_write(WAKE_UP_THS, 0b01001000, 1); // TODO need to prevent waking up when rotated on another axis
+    /* WAKE_UP_DUR:
+        FF_DUR5 = 0: Free-fall duration 0
+        WAKE_DUR[1:0] = 10: Wake-up duration = 0.01 seconds
+        STATIONARY = 0: Stationary detection without ODR change disabled
+        SLEEP_DUR[3:0] = 0010: Sleep duration of 10.24 seconds */
+    _lis2dtw12_reg_write(WAKE_UP_DUR, 0b01000010, 1);
+    /* CTRL7:
+        DRDY_PULSED = 0: Use latched mode for DR interrupt
+        INT2_ON_INT1 = 0: Don't route INT2 interrupts to INT1
+        INTERRUPTS_ENABLE = 1: Enable interrupts
+        USR_OFF_ON_OUT = 0: Disable user offset value in ODRs
+        USR_OFF_ON_WU = 0: Disable user offset value on wake-up
+        USR_OFF_W = 0: No user offset weight
+        HP_REF_MODE = 1: Enable high-pass filter reference mode
+        LPASS_ON6D = 0: ODR/2 low-pass filtered data sent to 6D interrupt function */
+    _lis2dtw12_reg_write(CTRL7, 0b00100010, 1);
+    _lis2dtw12_reg_read(ALL_INT_SRC, &(_data.accel_x), 1);
     /* Wait for device to poll some data */
     k_msleep(10);
 
