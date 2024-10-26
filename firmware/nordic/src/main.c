@@ -9,9 +9,9 @@
  * 
  */
 
+#include "accel.h"
 #include "button.h"
 #include "led.h"
-#include "drivers/lis2dtw12.h"
 
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
@@ -27,7 +27,7 @@ int main(void)
 {
     /* Initialize drivers */
     led_init();
-    lis2dtw12_init();
+    accel_init();
     button_init();  // Needs to be last to enable all other wakeup sources before sleeping
 
     return 0;
