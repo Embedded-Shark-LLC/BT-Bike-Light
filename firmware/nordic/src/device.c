@@ -63,8 +63,6 @@ void device_poweroff(const struct gpio_dt_spec * button_dt)
     device_set_state(DEVICE_STATE_POWEROFF);
     /* Clear LED */
     led_set_pattern(LED_PATTERN_OFF);
-    /* Turn off accelerometer */
-    lis2dtw12_power_off();  // TODO not working since called from interrupt function
     /* Wait until button released */
     while (gpio_pin_get_dt(button_dt));
     k_msleep(250);  // delay a small period for button bouncing
