@@ -18,11 +18,11 @@
  * FUNCTION DECLARATIONS
  */
 
-double accel_get_x();
-double accel_get_y();
-double accel_get_z();
-int16_t accel_get_temp();
+double accel_get_x(void);
+double accel_get_y(void);
+double accel_get_z(void);
+int16_t accel_get_temp(void);
 
-void accel_init();
+void accel_init(void);
 
 #endif  /* __ACCEL_H__ */

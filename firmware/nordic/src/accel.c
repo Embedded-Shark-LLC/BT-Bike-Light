@@ -21,7 +21,7 @@
 
 LOG_MODULE_REGISTER(ACCEL, LOG_LEVEL_INF);
 
-double accel_get_x()
+double accel_get_x(void)
 {
     /* Read acceleration */
     int16_t accel_x = 0;
@@ -32,7 +32,7 @@ double accel_get_x()
     return accel_x_converted;
 }
 
-double accel_get_y()
+double accel_get_y(void)
 {
     /* Read acceleration */
     int16_t accel_y = 0;
@@ -43,7 +43,7 @@ double accel_get_y()
     return accel_y_converted;
 }
 
-double accel_get_z()
+double accel_get_z(void)
 {
     /* Read acceleration */
     int16_t accel_z = 0;
@@ -54,7 +54,7 @@ double accel_get_z()
     return accel_z_converted;
 }
 
-int16_t accel_get_temp()
+int16_t accel_get_temp(void)
 {
     /* Read temperature */
     int16_t temperature = 0;
@@ -70,7 +70,7 @@ int16_t accel_get_temp()
  * @brief Initialize accelerometer
  * 
  */
-void accel_init()
+void accel_init(void)
 {
     /* Make sure device is responding */
     __ASSERT(lis2dtw12_get_device_id() == DEVICE_ID, "Acclerometer not responding on I2C bus");

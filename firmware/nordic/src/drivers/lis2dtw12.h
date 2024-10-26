@@ -295,10 +295,55 @@
  * FUNCTION DECLARATIONS
  */
 
+/**
+ * @brief Private function to read one or more registers from accelerometer over I2C
+ * 
+ * @param reg register to read
+ * @param data buffer to hold read data
+ * @param length number of bytes to read
+ */
 void lis2dtw12_reg_read(uint8_t reg, void * data, uint8_t length);
+
+/**
+ * @brief Private function to write to one or more registers to accelerometer over I2C
+ * 
+ * @param reg register to write
+ * @param data register data to write
+ */
 void lis2dtw12_reg_write(uint8_t reg, uint8_t data);
 
-uint8_t lis2dtw12_get_device_id();
+/**
+ * @brief Get device ID from WHO_AM_I register
+ * 
+ * @return uint8_t 
+ */
+uint8_t lis2dtw12_get_device_id(void);
+
+/**
+ * @brief Power off LIS2DTW12 accelerometer.
+ *          ODR field is set to power-off in CTRL1 register.
+ * 
+ */
+void lis2dtw12_power_off(void);
+
+/**
+ * @brief Reboot LIS2DTW12 accelerometer.
+ *          Reboot procedure is found in device datasheet.
+ * 
+ */
+void lis2dtw12_reboot(void);
+
+/**
+ * @brief Initialize LIS2DTW12 accelerometer
+ * 
+ * @param odr CTRL1 register ODR field value
+ * @param mode CTRL1 register MODE field value
+ * @param lp_mode CTRL1 register LP_MODE field value
+ * @param bw_filt CTRL6 register BW_FILT field value
+ * @param fs CTRL6 register FS field value
+ * @param fds CTRL6 register FDS field value
+ * @param low_noise CTRL6 register LOW_NOISE field value
+ */
 void lis2dtw12_init(uint8_t odr, uint8_t mode, uint8_t lp_mode, uint8_t bw_filt, uint8_t fs, uint8_t fds, uint8_t low_noise);
 
 #endif  /* __LIS2DTW12_H__ */

@@ -34,7 +34,7 @@ led_pattern_t;
  * @brief Initialize all peripherals for LED control
  * 
  */
-void led_init();
+void led_init(void);
 
 /**
  * @brief Set blink pattern of LED
@@ -47,4 +47,4 @@ void led_set_pattern(led_pattern_t pattern);
  * @brief Toggle blink pattern (cycle through all patterns)
  * 
  */
-void led_toggle_pattern();
+void led_toggle_pattern(void);
