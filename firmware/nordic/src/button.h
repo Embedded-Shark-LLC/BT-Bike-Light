@@ -15,13 +15,25 @@
 #define BUTTON_GPIOTE_INSTANCE      0
 #define BUTTON_TIMER_INSTANCE       1
 
-#define BUTTON_DEBOUNCE_HOLDOFF_MS  10
-#define BUTTON_LONGPRESS_MS         1500
+#define BUTTON_POLL_HZ              20
+
+/**
+ * @brief Get the button GPIO DT spec
+ * 
+ * @return struct gpio_dt_spec* 
+ */
+const struct gpio_dt_spec * button_get_dt_spec(void);
+
+/**
+ * @brief This thread reads button inputs and handles short/long presses
+ * 
+ */
+void button_thread(void);
 
 /**
  * @brief Initialize all peripherals for interface button
  * 
  */
-void button_init();
+void button_init(void);
 
 #endif  /* __BUTTON_H__ */

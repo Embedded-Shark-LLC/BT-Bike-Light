@@ -152,7 +152,7 @@ static nrfx_pwm_t _pwm_led = NRFX_PWM_INSTANCE(LED_PWM_INSTANCE);
 /* Other locals */
 led_pattern_t _current_pattern;
 
-void led_init()
+void led_init(void)
 {
     nrfx_err_t err;
 
@@ -332,7 +332,7 @@ void led_set_pattern(led_pattern_t pattern)
     }
 }
 
-void led_toggle_pattern()
+void led_toggle_pattern(void)
 {
     _current_pattern = (_current_pattern + 1) % LED_PATTERN_NUM_PATTERNS;
     led_set_pattern(_current_pattern);

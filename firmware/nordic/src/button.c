@@ -11,171 +11,85 @@
 
 #include "button.h"
 
+#include "device.h"
 #include "led.h"
-#include "sys.h"
-
-#include <nrfx_timer.h>
 
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
-#if (BUTTON_TIMER_INSTANCE == 0)
-#define BUTTON_TIMER_IRQN       TIMER0_IRQn
-#elif (BUTTON_TIMER_INSTANCE == 1)
-#define BUTTON_TIMER_IRQN       TIMER1_IRQn
-#elif (BUTTON_TIMER_INSTANCE == 2)
-#define BUTTON_TIMER_IRQN       TIMER2_IRQn
-#elif (BUTTON_TIMER_INSTANCE == 3)
-#define BUTTON_TIMER_IRQN       TIMER3_IRQn
-#elif (BUTTON_TIMER_INSTANCE == 4)
-#define BUTTON_TIMER_IRQN       TIMER4_IRQn
-#endif
-
 LOG_MODULE_REGISTER(BUTTON, LOG_LEVEL_INF);
 
 /* GPIO */
 static const struct gpio_dt_spec _button_dt = GPIO_DT_SPEC_GET(DT_NODELABEL(user_gpio), button_gpios);
-static struct gpio_callback _button_cb_data;
-int64_t _button_press_time_last = 0;
 
-/* Timer */
-static nrfx_timer_t _timer_button = NRFX_TIMER_INSTANCE(BUTTON_TIMER_INSTANCE);
-
-/**
- * @brief Callback for button pressed interrupt
- * 
- * @param dev 
- * @param cb 
- * @param pins 
- */
-void _button_callback(const struct device * port, struct gpio_callback * cb, gpio_port_pins_t pins)
+const struct gpio_dt_spec * button_get_dt_spec(void)
 {
-    /* Button debounce logic */
-    /* Get current timestamp */
-    int64_t _button_press_time = k_uptime_get();
-    bool _button_bounce = false;
-    /* Check for button bounce */
-    if ((_button_press_time - _button_press_time_last) < BUTTON_DEBOUNCE_HOLDOFF_MS)
-    {
-        LOG_WRN("Button bounce detected");
-        _button_bounce = true;
-    }
-    /* Update last pressed timestamp */
-    _button_press_time_last = _button_press_time;
-    /* Ignore bouncing during wakeup */
-    if ((_button_bounce) && (sys_state == SYS_STATE_RUN))
-    {
-        return;
-    }
-
-    /* If we reach this point debouncing has been accounted for */
-    /* Get button pressed state */
-    bool _button_pressed = gpio_pin_get_dt(&_button_dt);
-    if (_button_pressed)
-    {
-        /* Need to start a timer to see if this is a long press or a short press */
-        nrfx_timer_clear(&_timer_button);
-        nrfx_timer_enable(&_timer_button);
-    }
-    else
-    {
-        /* Button released before timer expired (short press) */
-        LOG_DBG("SHORT PRESS");
-        if (sys_state == SYS_STATE_POWEROFF)
-        {
-            /* Button press wasn't long enough to wake up, go back to sleep */
-            sys_power_off(&_button_dt);
-        }
-        else if (sys_state == SYS_STATE_WAKEUP)
-        {
-            /* Button press was long enough to wake up, so we need to ignore short press logic */
-            sys_state = SYS_STATE_RUN;
-        }
-        else
-        {
-            /* Disable timer to avoid long press logic triggering */
-            nrfx_timer_disable(&_timer_button);
-            /* If we made it here, this is a short press */
-            led_toggle_pattern();
-        }
-    }
+    return &_button_dt;
 }
 
-/**
- * @brief Callback for timer expired interrupt (long button press)
- * 
- * @param event_type 
- * @param p_context 
- */
-void _timer_callback(nrf_timer_event_t event_type, void * p_context)
+void button_thread(void)
 {
-    if (event_type == NRF_TIMER_EVENT_COMPARE0)
+    /* The button buffer works by shifting left and ORing the button state
+        If the buffer is all 1s, then a long press occurred
+        If the buffer is some 1s followed by a 0, then a press was released */
+    uint32_t button_buffer = 0;
+
+    while (1)
     {
-        /* Timer expired (long press) */
-        LOG_DBG("LONG PRESS");
-        if ((sys_state == SYS_STATE_POWEROFF))
+        /* Place button state into buffer */
+        button_buffer = (button_buffer << 1) | gpio_pin_get_dt(&_button_dt);
+        /* Check for button events */
+        if (button_buffer == 0x7FFFFFFF)
         {
-            bool _button_pressed = gpio_pin_get_dt(&_button_dt);
-            /* Need to check button state since if the user quickly presses and releases button,
-                the release event will occur before the button GPIO interrupt is configured. */
-            if (_button_pressed)
+            /* Long press occurred
+                We use 0x7FFFFFFF so that it won't constantly detect long presses if still held */
+            LOG_DBG("Long press");
+            if (device_get_state() == DEVICE_STATE_POWEROFF)
             {
-                /* Button still pressed, continue with wake up */
-                sys_state = SYS_STATE_WAKEUP;
-                /* Set boot pattern */
-                led_set_pattern(LED_PATTERN_PULSE);
+                /* Wake up device */
+                device_wakeup();
             }
-            else
+            else if (device_get_state() == DEVICE_STATE_RUN)
             {
-                /* Button not pressed, go back to sleep */
-                sys_power_off(&_button_dt);
+                /* Power off device if running */
+                device_poweroff();
             }
         }
-        else
+        else if (button_buffer == 0xFFFFFFFE)
         {
-            /* Shut device off */
-            sys_power_off(&_button_dt);
+            /* Long press released */
+            LOG_DBG("Long press released");
         }
+        else if ((button_buffer & 0x3) == 0x2)
+        {
+            /* Short press released */
+            LOG_DBG("Short press released");
+            if (device_get_state() == DEVICE_STATE_POWEROFF)
+            {
+                /* Button not held long enough, go back to sleep */
+                device_poweroff();
+            }
+            else if (device_get_state() == DEVICE_STATE_RUN)
+            {
+                /* Toggle LED pattern */
+                led_toggle_pattern();
+            }
+        }
+
+        /* Delay until next poll interval */
+        k_msleep(1000 / BUTTON_POLL_HZ);
     }
 }
 
 void button_init()
 {
-    nrfx_err_t err;
+    int err;
 
     /* GPIO config */
     /* Initialize GPIO */
-	NRFX_ASSERT(device_is_ready(_button_dt.port));
+	__ASSERT(device_is_ready(_button_dt.port), "Button port not ready");
     /* Configure button as input pin */
 	err = gpio_pin_configure_dt(&_button_dt, GPIO_INPUT);
-	NRFX_ASSERT(err == 0);
-    /* Configure interrupt for button */
-    err = gpio_pin_interrupt_configure_dt(&_button_dt, GPIO_INT_EDGE_BOTH);
-    NRFX_ASSERT(err == 0);
-    /* Add callback */
-	gpio_init_callback(&_button_cb_data, _button_callback, BIT(_button_dt.pin));
-	err = gpio_add_callback(_button_dt.port, &_button_cb_data);
-    NRFX_ASSERT(err == 0);
-
-    /* Timer config */
-    /* Configure timer parameters */
-    nrfx_timer_config_t _timer_button_config =
-    {
-        .frequency          = NRFX_MHZ_TO_HZ(1),
-        .mode               = NRF_TIMER_MODE_TIMER,
-        .bit_width          = NRF_TIMER_BIT_WIDTH_32,
-        .interrupt_priority = NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY,
-        .p_context          = NULL,
-    };
-    /* Initialize timer */
-    err = nrfx_timer_init(&_timer_button, &_timer_button_config, _timer_callback);
-    NRFX_ASSERT(err == NRFX_SUCCESS);
-    /* Setup compare channels */
-    nrfx_timer_extended_compare(&_timer_button, NRF_TIMER_CC_CHANNEL0, nrfx_timer_ms_to_ticks(&_timer_button, BUTTON_LONGPRESS_MS), NRF_TIMER_SHORT_COMPARE0_STOP_MASK, true);
-    /* Start timer (for long press wake from sleep) */
-    nrfx_timer_clear(&_timer_button);
-    nrfx_timer_enable(&_timer_button);
-    /* Needed to handle timer compare interrupts */
-    IRQ_CONNECT(BUTTON_TIMER_IRQN, 0, NRFX_TIMER_INST_HANDLER_GET(BUTTON_TIMER_INSTANCE), NULL, 0);  // priority must be higher than GPIOTE to avoid button release event immediately waking up device
+	__ASSERT(err == 0, "Error configuring button as input");
 }
