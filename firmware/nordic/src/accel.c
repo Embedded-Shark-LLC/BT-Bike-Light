@@ -66,10 +66,6 @@ int16_t accel_get_temp(void)
     return temperature;
 }
 
-/**
- * @brief Initialize accelerometer
- * 
- */
 void accel_init(void)
 {
     /* Make sure device is responding */

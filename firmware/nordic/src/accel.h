@@ -18,11 +18,38 @@
  * FUNCTION DECLARATIONS
  */
 
+/**
+ * @brief Get acceleration in X-axis
+ * 
+ * @return double accleration (g)
+ */
 double accel_get_x(void);
+
+/**
+ * @brief Get acceleration in Y-axis
+ * 
+ * @return double accleration (g)
+ */
 double accel_get_y(void);
+
+/**
+ * @brief Get acceleration in Z-axis
+ * 
+ * @return double accleration (g)
+ */
 double accel_get_z(void);
+
+/**
+ * @brief Get temperature
+ * 
+ * @return int16_t temperature (celsius)
+ */
 int16_t accel_get_temp(void);
 
+/**
+ * @brief Initialize accelerometer
+ * 
+ */
 void accel_init(void);
 
 #endif  /* __ACCEL_H__ */
