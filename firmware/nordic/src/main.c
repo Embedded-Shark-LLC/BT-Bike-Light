@@ -18,6 +18,9 @@
 
 LOG_MODULE_REGISTER(MAIN, LOG_LEVEL_INF);
 
+/* Define task to handle button events */
+K_THREAD_DEFINE(button_task_id, 1024, button_thread, NULL, NULL, NULL, 4, 0, 0);
+
 /**
  * @brief Application entry point
  * 
