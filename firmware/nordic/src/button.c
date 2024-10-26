@@ -22,19 +22,10 @@ LOG_MODULE_REGISTER(BUTTON, LOG_LEVEL_INF);
 
 /* GPIO */
 static const struct gpio_dt_spec _button_dt = GPIO_DT_SPEC_GET(DT_NODELABEL(user_gpio), button_gpios);
-static struct gpio_callback _button_cb_data;
 
-/**
- * @brief Callback for button pressed interrupt
- * 
- * @param dev 
- * @param cb 
- * @param pins 
- */
-static void _button_callback(const struct device * port, struct gpio_callback * cb, gpio_port_pins_t pins)
+const struct gpio_dt_spec * button_get_dt_spec(void)
 {
-    /* Nothing to do here, thread will handle button events */
-    return;
+    return &_button_dt;
 }
 
 void button_thread(void)
@@ -62,18 +53,13 @@ void button_thread(void)
             else if (device_get_state() == DEVICE_STATE_RUN)
             {
                 /* Power off device if running */
-                device_poweroff(&_button_dt);
+                device_poweroff();
             }
         }
         else if (button_buffer == 0xFFFFFFFE)
         {
             /* Long press released */
             LOG_DBG("Long press released");
-            /* Change device state */
-            if (device_get_state() == DEVICE_STATE_WAKEUP)
-            {
-                device_set_state(DEVICE_STATE_RUN);
-            }
         }
         else if ((button_buffer & 0x3) == 0x2)
         {
@@ -82,7 +68,7 @@ void button_thread(void)
             if (device_get_state() == DEVICE_STATE_POWEROFF)
             {
                 /* Button not held long enough, go back to sleep */
-                device_poweroff(&_button_dt);
+                device_poweroff();
             }
             else if (device_get_state() == DEVICE_STATE_RUN)
             {
@@ -98,19 +84,12 @@ void button_thread(void)
 
 void button_init()
 {
-    nrfx_err_t err;
+    int err;
 
     /* GPIO config */
     /* Initialize GPIO */
-	NRFX_ASSERT(device_is_ready(_button_dt.port));
+	__ASSERT(device_is_ready(_button_dt.port), "Button port not ready");
     /* Configure button as input pin */
 	err = gpio_pin_configure_dt(&_button_dt, GPIO_INPUT);
-	NRFX_ASSERT(err == 0);
-    /* Configure interrupt for button */
-    err = gpio_pin_interrupt_configure_dt(&_button_dt, GPIO_INT_EDGE_BOTH);
-    NRFX_ASSERT(err == 0);
-    /* Add callback */
-	gpio_init_callback(&_button_cb_data, _button_callback, BIT(_button_dt.pin));
-	err = gpio_add_callback(_button_dt.port, &_button_cb_data);
-    NRFX_ASSERT(err == 0);
+	__ASSERT(err == 0, "Error configuring button as input");
 }

@@ -18,6 +18,13 @@
 #define BUTTON_POLL_HZ              20
 
 /**
+ * @brief Get the button GPIO DT spec
+ * 
+ * @return struct gpio_dt_spec* 
+ */
+const struct gpio_dt_spec * button_get_dt_spec(void);
+
+/**
  * @brief This thread reads button inputs and handles short/long presses
  * 
  */

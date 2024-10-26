@@ -15,11 +15,6 @@
 #include "button.h"
 #include "led.h"
 
-#include <drivers/lis2dtw12.h>
-
-#include <nrfx_gpiote.h>
-#include <nrfx_timer.h>
-
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
@@ -49,28 +44,30 @@ void device_set_state(device_state_t new_state)
 
 void device_wakeup(void)
 {
+    /* Set device state */
+    device_set_state(DEVICE_STATE_RUN);
     /* Set boot LED pattern */
     led_set_pattern(LED_PATTERN_PULSE);
-    /* Set devicetem state */
-    device_set_state(DEVICE_STATE_WAKEUP);
 }
 
-void device_poweroff(const struct gpio_dt_spec * button_dt)
+void device_poweroff()
 {
-    nrfx_err_t err;
+    int err;
 
     /* Change device state */
     device_set_state(DEVICE_STATE_POWEROFF);
     /* Clear LED */
     led_set_pattern(LED_PATTERN_OFF);
     /* Wait until button released */
-    while (gpio_pin_get_dt(button_dt));
+    while (gpio_pin_get_dt(button_get_dt_spec()));
     k_msleep(250);  // delay a small period for button bouncing
     /* Configure interrupt for button (wakeup source) */
-    err = gpio_pin_interrupt_configure_dt(button_dt, GPIO_INT_LEVEL_ACTIVE);
-    NRFX_ASSERT(err == 0);
+    err = gpio_pin_interrupt_configure_dt(button_get_dt_spec(), GPIO_INT_LEVEL_ACTIVE);
+    __ASSERT(err == 0, "Error changing button interrupt");
+    /* Clear LATCH register */
+    NRF_GPIO->LATCH = NRF_GPIO->LATCH;
     /* Put microcontroller to sleep */
-    LOG_WRN("Powering devicetem off");
+    LOG_WRN("Powering device off");
     sys_poweroff();
 }
 

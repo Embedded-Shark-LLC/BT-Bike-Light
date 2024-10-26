@@ -62,9 +62,8 @@ void device_wakeup(void);
  * @brief Turn the device off
  *          Handles cleanup before shutting off
  * 
- * @param button_dt 
  */
-void device_poweroff(const struct gpio_dt_spec * button_dt);
+void device_poweroff();
 
 /**
  * @brief Get the device wakeup reason
