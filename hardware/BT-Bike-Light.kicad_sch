@@ -4140,6 +4140,88 @@
 				)
 			)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "Nordic:nPM1300"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -6213,6 +6295,12 @@
 		)
 	)
 	(junction
+		(at 148.59 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "07bd8c6b-c64c-484d-8832-b410a5aa42ae")
+	)
+	(junction
 		(at 73.66 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6303,12 +6391,6 @@
 		(uuid "8753bc48-aab7-4610-8df2-25c30b6627f9")
 	)
 	(junction
-		(at 85.09 77.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9bdcf1bb-02fa-48eb-af15-27c917163574")
-	)
-	(junction
 		(at 93.98 90.17)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6345,6 +6427,12 @@
 		(uuid "c818d1d4-b2e3-4edb-aea3-c9a1d263530c")
 	)
 	(junction
+		(at 137.16 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c96c51e9-fafd-4a0e-bbde-d0f1318004fa")
+	)
+	(junction
 		(at 152.4 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6357,6 +6445,12 @@
 		(uuid "d7a56afb-8a15-48a9-b0d2-a83b6b80aea0")
 	)
 	(junction
+		(at 85.09 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e74a2cbd-6284-4777-aea6-9a06fb6bdc46")
+	)
+	(junction
 		(at 140.97 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6365,10 +6459,6 @@
 	(no_connect
 		(at 80.01 213.36)
 		(uuid "0362782e-b98a-41b7-aea6-6ea98c80e208")
-	)
-	(no_connect
-		(at 134.62 67.31)
-		(uuid "0da03f95-ac40-4fc1-b6df-bca0b4945f93")
 	)
 	(no_connect
 		(at 115.57 177.8)
@@ -6463,10 +6553,6 @@
 		(uuid "6de081b8-c10c-4db1-bb28-47d0152c39d0")
 	)
 	(no_connect
-		(at 134.62 72.39)
-		(uuid "786f5167-1baf-457f-baac-f6087c3adf22")
-	)
-	(no_connect
 		(at 80.01 175.26)
 		(uuid "80db396c-84b9-4bff-b89f-da9410d175fe")
 	)
@@ -6555,10 +6641,6 @@
 		(uuid "de16e790-ee75-42f9-815c-9662b9c1ba75")
 	)
 	(no_connect
-		(at 134.62 69.85)
-		(uuid "e16bb754-6662-4329-af78-db4088bad56f")
-	)
-	(no_connect
 		(at 115.57 196.85)
 		(uuid "e3c04951-4e66-4e7a-983c-1b68a967cc7c")
 	)
@@ -6635,6 +6717,16 @@
 			(type default)
 		)
 		(uuid "0945907e-e86a-473f-bff7-b0a20843a7b0")
+	)
+	(wire
+		(pts
+			(xy 85.09 77.47) (xy 85.09 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f1647b5-c558-48a8-be5e-6a874e1945f8")
 	)
 	(wire
 		(pts
@@ -6838,6 +6930,16 @@
 	)
 	(wire
 		(pts
+			(xy 137.16 72.39) (xy 137.16 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26780fd3-f192-4370-94bb-23eb92faac10")
+	)
+	(wire
+		(pts
 			(xy 233.68 130.81) (xy 233.68 132.08)
 		)
 		(stroke
@@ -6948,6 +7050,16 @@
 	)
 	(wire
 		(pts
+			(xy 137.16 67.31) (xy 148.59 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "396b2e86-477e-49d8-875e-258ee18bd334")
+	)
+	(wire
+		(pts
 			(xy 80.01 41.91) (xy 82.55 41.91)
 		)
 		(stroke
@@ -6975,16 +7087,6 @@
 			(type default)
 		)
 		(uuid "3d2f9986-4b1c-499e-aa52-03895311d9a1")
-	)
-	(wire
-		(pts
-			(xy 85.09 77.47) (xy 99.06 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d5d6c78-f785-43ef-a911-4354da184ef1")
 	)
 	(wire
 		(pts
@@ -7095,6 +7197,26 @@
 			(type default)
 		)
 		(uuid "515e2ad5-c874-4185-9b31-d686a492b60e")
+	)
+	(wire
+		(pts
+			(xy 148.59 67.31) (xy 152.4 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5227a8b1-a48e-4ff7-bd7a-27e470715885")
+	)
+	(wire
+		(pts
+			(xy 137.16 72.39) (xy 134.62 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5431799d-d678-48fe-8969-bbd3469beb6c")
 	)
 	(wire
 		(pts
@@ -7248,6 +7370,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 69.85) (xy 148.59 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d7389cb-f687-4b59-9cf1-6b1d8f4aeb06")
+	)
+	(wire
+		(pts
 			(xy 96.52 64.77) (xy 99.06 64.77)
 		)
 		(stroke
@@ -7348,6 +7480,16 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 69.85) (xy 148.59 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9298c8f4-2613-46df-98a9-e121e0a653ed")
+	)
+	(wire
+		(pts
 			(xy 200.66 127) (xy 203.2 127)
 		)
 		(stroke
@@ -7395,6 +7537,16 @@
 			(type default)
 		)
 		(uuid "99ce36b4-7835-45b6-ad73-7314bad35beb")
+	)
+	(wire
+		(pts
+			(xy 152.4 68.58) (xy 152.4 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cbfa057-3e72-474c-80df-837e20e917c4")
 	)
 	(wire
 		(pts
@@ -7628,6 +7780,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 73.66) (xy 152.4 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bee83073-727d-4097-bdcb-64f16dc901ad")
+	)
+	(wire
+		(pts
 			(xy 201.93 90.17) (xy 204.47 90.17)
 		)
 		(stroke
@@ -7664,16 +7826,6 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c4b591f6-09cc-47b7-87ae-fd666d6a74de")
-	)
-	(wire
-		(pts
-			(xy 85.09 78.74) (xy 85.09 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
 		(uuid "c4d6dbd5-7f72-42fa-9634-28e04d8f56e0")
 	)
 	(wire
@@ -7705,6 +7857,16 @@
 			(type default)
 		)
 		(uuid "c6880633-4b6a-415a-b172-a1613055694b")
+	)
+	(wire
+		(pts
+			(xy 85.09 77.47) (xy 88.9 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7147fa6-2220-4dc3-a44f-d175a4a61df8")
 	)
 	(wire
 		(pts
@@ -7755,6 +7917,16 @@
 			(type default)
 		)
 		(uuid "ca8e0cfc-8e0c-4dc2-b444-8eaea9310c75")
+	)
+	(wire
+		(pts
+			(xy 96.52 77.47) (xy 99.06 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf455a51-f5c6-4898-bf64-6f7b7a78dbd6")
 	)
 	(wire
 		(pts
@@ -7845,6 +8017,16 @@
 			(type default)
 		)
 		(uuid "d9d3b2dc-bfd3-4a4a-b4ac-811b24ef809f")
+	)
+	(wire
+		(pts
+			(xy 134.62 67.31) (xy 137.16 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9dbf8d3-b2a4-4c7a-b41b-f90161bdacbc")
 	)
 	(wire
 		(pts
@@ -7978,6 +8160,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 69.85) (xy 139.7 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f009bcef-fac3-4d13-b19a-d080e567a32d")
+	)
+	(wire
+		(pts
 			(xy 59.69 36.83) (xy 99.06 36.83)
 		)
 		(stroke
@@ -8005,6 +8197,16 @@
 			(type default)
 		)
 		(uuid "f55b7a79-4a74-48b1-b440-399e1a423b45")
+	)
+	(wire
+		(pts
+			(xy 137.16 66.04) (xy 137.16 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5ba40c7-27d7-474c-98e6-9fda079566d6")
 	)
 	(wire
 		(pts
@@ -9955,6 +10157,76 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
+		(at 152.4 71.12 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "30da190a-482e-4b1f-8f6e-b6f12b68cd58")
+		(property "Reference" "C110"
+			(at 154.94 69.8562 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10uF"
+			(at 154.94 72.3962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 152.4 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 152.4 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 152.4 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "34708c3b-1ef9-44c7-910e-c1019b43b7d5")
+		)
+		(pin "2"
+			(uuid "f114cffb-f398-41db-bfb9-e2ddaefd329e")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "C110")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
 		(at 48.26 35.56 0)
 		(mirror y)
 		(unit 1)
@@ -10094,6 +10366,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 137.16 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3776bbf4-9010-48ed-bc1b-77269917d663")
+		(property "Reference" "#PWR0144"
+			(at 137.16 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 137.16 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 137.16 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "514002a4-4179-4263-b03a-65269e3db62c")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR0144")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small_US")
 		(at 193.04 29.21 90)
 		(unit 1)
@@ -10223,6 +10562,73 @@
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "TP101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 152.4 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ed0466b-d161-4b83-a836-0ace70e33865")
+		(property "Reference" "#PWR0145"
+			(at 152.4 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 152.4 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 152.4 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "79f3d3d5-d269-4da6-952a-1d6a1a9db4a9")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
@@ -10578,6 +10984,71 @@
 			(project ""
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "U105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+1V8")
+		(at 137.16 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "52e1e1d4-662e-435e-b031-e65e53c8ea05")
+		(property "Reference" "#PWR0124"
+			(at 137.16 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+2V6"
+			(at 137.16 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+1V8\""
+			(at 137.16 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d3a55d74-6669-45fb-b3be-4a3476ef59a6")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)
@@ -11045,6 +11516,138 @@
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "#PWR0121")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 248.92 160.02 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "71b7c399-61a2-4345-beae-5f0ee4737739")
+		(property "Reference" "H101"
+			(at 251.46 158.7499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 251.46 161.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 248.92 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 248.92 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "H101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 143.51 69.85 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "72696b23-686b-4501-b5ee-30a587fabfdb")
+		(property "Reference" "L103"
+			(at 143.51 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2uH"
+			(at 143.51 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
+			(at 143.51 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Inductor"
+			(at 143.51 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "97e0c8f1-edcc-4c85-ac7f-652b018051f4")
+		)
+		(pin "2"
+			(uuid "5ff51b71-ed6f-4d67-aead-10e3050b256d")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "L103")
 					(unit 1)
 				)
 			)
@@ -12284,6 +12887,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 248.92 166.37 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "95e2337c-ad0c-4614-8845-0985c52a8545")
+		(property "Reference" "H102"
+			(at 251.46 165.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 251.46 167.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 248.92 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 248.92 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "H102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+BATT")
 		(at 80.01 41.91 0)
 		(unit 1)
@@ -12695,6 +13362,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 92.71 77.47 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a8faad4e-82e3-4088-87e3-ae22c971ce1d")
+		(property "Reference" "R111"
+			(at 92.71 79.756 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "68k"
+			(at 92.71 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 92.71 75.692 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 92.71 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "009c48ed-0a15-4f0d-8a47-0ddc8b6e556d")
+		)
+		(pin "2"
+			(uuid "49d4cf30-fa4c-4d65-9106-720a37c7fec3")
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "R111")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 24.13 58.42 0)
 		(unit 1)
@@ -12756,6 +13490,70 @@
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "#PWR0101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 248.92 179.07 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b1067f9f-8d29-44a0-8bda-6454fafbd1fd")
+		(property "Reference" "H104"
+			(at 251.46 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 251.46 180.3399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 248.92 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 248.92 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "H104")
 					(unit 1)
 				)
 			)
@@ -13918,6 +14716,70 @@
 			(project "BT-Bike-Light"
 				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
 					(reference "C111")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 248.92 172.72 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ee5e5430-d3c8-431c-b7f7-a29681f5a89f")
+		(property "Reference" "H103"
+			(at 251.46 171.4499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "M2.5"
+			(at 251.46 173.9899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 248.92 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 248.92 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "BT-Bike-Light"
+				(path "/3263b444-391f-435a-aeab-6f7fca8830e2"
+					(reference "H103")
 					(unit 1)
 				)
 			)
