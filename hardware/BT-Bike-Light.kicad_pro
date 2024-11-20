@@ -58,7 +58,12 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_overlap|128048413|102450000|9aaa6bc8-ef97-4b5d-b780-3a9388a294dc|f839aad2-7041-4f25-9913-a3380af2ab14",
+        "silk_overlap|128419841|64050000|8081f442-8f58-4e26-8ba8-a5ccbf55bd50|7b08b5f5-5817-43f0-bd48-efa73321230a",
+        "silk_overlap|130027698|78515000|60a0e174-24d5-4d28-8a77-66188dd3c2d6|58c1d2f7-782d-4971-869a-1f61ed91d4e9",
+        "silk_overlap|147274603|75050000|d4044eb6-4ee1-439e-82b9-6adb2bccc24f|6c4d9005-1d99-4747-abfa-2d097b17b173"
+      ],
       "meta": {
         "version": 2
       },
@@ -454,7 +459,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.1,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.3,
