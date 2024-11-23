@@ -34,3 +34,6 @@ fp-info-cache
 
 # 3D models (ignored for licensing reasons)
 3Dmodels
+
+# Generated production files
+production
